@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<problems>
+  <problem>
+    <question>What is the main purpose of the reparameterization trick in VAEs?</question>
+    <answers>
+      <answer>To reduce the computational complexity of the encoder network</answer>
+      <answer>To increase the dimensionality of the latent space</answer>
+      <answer correct="true">To make the sampling process differentiable so gradients can be computed</answer>
+      <answer>To enforce the prior distribution to be Gaussian</answer>
+    </answers>
+    <explanation>The reparameterization trick is used to make the stochastic sampling operation differentiable. Instead of sampling $z$ directly from $N(\mu, \sigma^2)$, we reparameterize it as $z = \mu + \sigma \epsilon$ where $\epsilon \sim N(0, I)$. This separates the stochastic component from the parameters, allowing gradients to flow through the network during backpropagation.</explanation>
+  </problem>
+  <problem>
+    <question>What is the Evidence Lower BOund (ELBO) for a standard VAE?</question>
+    <answers>
+      <answer correct="true">$L(\theta, \phi; x) = E_{q_\phi(z|x)}[\log p_\theta(x|z)] - D_{KL}(q_\phi(z|x)||p_\theta(z))$</answer>
+      <answer>$L(\theta, \phi; x) = E_{q_\phi(z|x)}[\log p_\theta(x|z)] + D_{KL}(q_\phi(z|x)||p_\theta(z))$</answer>
+      <answer>$L(\theta, \phi; x) = \log p_\theta(x) - D_{KL}(q_\phi(z|x)||p_\theta(z))$</answer>
+      <answer>$L(\theta, \phi; x) = E_{p_\theta(z)}[\log p_\theta(x|z)] - D_{KL}(q_\phi(z|x)||p_\theta(z))$</answer>
+    </answers>
+    <explanation>The ELBO for a VAE is $L(\theta, \phi; x) = E_{q_\phi(z|x)}[\log p_\theta(x|z)] - D_{KL}(q_\phi(z|x)||p_\theta(z))$. The first term is the reconstruction likelihood (encouraging good reconstruction), and the second term is the negative KL divergence between the approximate posterior and the prior (encouraging the latent distribution to be close to the prior).</explanation>
+  </problem>
+  <problem>
+    <question>What is the main limitation of standard (non-variational) autoencoders that VAEs address?</question>
+    <answers>
+      <answer>Standard autoencoders cannot compress data effectively</answer>
+      <answer>Standard autoencoders require too much computational power</answer>
+      <answer correct="true">Standard autoencoders have discontinuous latent spaces that make generation of new samples difficult</answer>
+      <answer>Standard autoencoders can only work with linear transformations</answer>
+    </answers>
+    <explanation>The main limitation of standard autoencoders is that their latent spaces lack continuity and structure. While they can reconstruct training data well, they struggle to generate new samples because regions of the latent space not seen during training may decode to unrealistic outputs. VAEs address this by enforcing a structured, continuous latent space through the KL divergence term in their objective function.</explanation>
+  </problem>
+</problems> 
