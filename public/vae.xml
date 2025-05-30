@@ -10,14 +10,4 @@
     </answers>
     <explanation>The reparameterization trick is used to make the stochastic sampling operation differentiable. Instead of sampling $z$ directly from $N(\mu, \sigma^2)$, we reparameterize it as $z = \mu + \sigma \epsilon$ where $\epsilon \sim N(0, I)$. This separates the stochastic component from the parameters, allowing gradients to flow through the network during backpropagation.</explanation>
   </problem>
-  <problem>
-    <question>What is the Evidence Lower BOund (ELBO) for a standard VAE?</question>
-    <answers>
-      <answer correct="true">$L(\theta, \phi; x) = E_{q_\phi(z|x)}[\log p_\theta(x|z)] - D_{KL}(q_\phi(z|x)||p_\theta(z))$</answer>
-      <answer>$L(\theta, \phi; x) = E_{q_\phi(z|x)}[\log p_\theta(x|z)] + D_{KL}(q_\phi(z|x)||p_\theta(z))$</answer>
-      <answer>$L(\theta, \phi; x) = \log p_\theta(x) - D_{KL}(q_\phi(z|x)||p_\theta(z))$</answer>
-      <answer>$L(\theta, \phi; x) = E_{p_\theta(z)}[\log p_\theta(x|z)] - D_{KL}(q_\phi(z|x)||p_\theta(z))$</answer>
-    </answers>
-    <explanation>The ELBO for a VAE is $L(\theta, \phi; x) = E_{q_\phi(z|x)}[\log p_\theta(x|z)] - D_{KL}(q_\phi(z|x)||p_\theta(z))$. The first term is the reconstruction likelihood (encouraging good reconstruction), and the second term is the negative KL divergence between the approximate posterior and the prior (encouraging the latent distribution to be close to the prior).</explanation>
-  </problem>
 </problems> 
