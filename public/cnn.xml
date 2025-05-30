@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<problems>
+  <problem>
+    <question>What is the main purpose of the reparameterization trick in VAEs?</question>
+    <answers>
+      <answer>To reduce the computational complexity of the encoder network</answer>
+      <answer>To increase the dimensionality of the latent space</answer>
+      <answer correct="true">To make the sampling process differentiable so gradients can be computed</answer>
+      <answer>To enforce the prior distribution to be Gaussian</answer>
+    </answers>
+    <explanation>The reparameterization trick is used to make the stochastic sampling operation differentiable. Instead of sampling $z$ directly from $N(\mu, \sigma^2)$, we reparameterize it as $z = \mu + \sigma \epsilon$ where $\epsilon \sim N(0, I)$. This separates the stochastic component from the parameters, allowing gradients to flow through the network during backpropagation.</explanation>
+  </problem>
+  <problem>
+    <question>What is the main limitation of standard (non-variational) autoencoders that VAEs address?</question>
+    <answers>
+      <answer>Standard autoencoders cannot compress data effectively</answer>
+      <answer>Standard autoencoders require too much computational power</answer>
+      <answer correct="true">Standard autoencoders have discontinuous latent spaces that make generation of new samples difficult</answer>
+      <answer>Standard autoencoders can only work with linear transformations</answer>
+    </answers>
+    <explanation>The main limitation of standard autoencoders is that their latent spaces lack continuity and structure. While they can reconstruct training data well, they struggle to generate new samples because regions of the latent space not seen during training may decode to unrealistic outputs. VAEs address this by enforcing a structured, continuous latent space through the KL divergence term in their objective function.</explanation>
+  </problem>
+</problems> 
