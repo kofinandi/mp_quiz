@@ -1,0 +1,10 @@
+[
+  {
+    "name": "CNNs",
+    "path": "/mp_quiz/CNNs.xml"
+  },
+  {
+    "name": "NNs",
+    "path": "/mp_quiz/NNs.xml"
+  }
+]

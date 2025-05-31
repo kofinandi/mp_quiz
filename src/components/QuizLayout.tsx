@@ -44,15 +44,17 @@ export const QuizLayout: React.FC = () => {
   return (
     <Box sx={{ 
       display: 'flex', 
-      height: '100vh',
-      width: '100vw',
+      height: '100%',
+      width: '100%',
       overflow: 'hidden'
     }}>
       <QuizMenu onQuizSelect={handleQuizSelect} selectedQuiz={selectedQuiz} />
       <Box sx={{ 
         flexGrow: 1, 
+        height: '100%',
         overflowY: 'auto',
-        bgcolor: '#f5f5f5'
+        bgcolor: '#f5f5f5',
+        position: 'relative'
       }}>
         <Quiz problems={problems} />
       </Box>

@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<problems>
+  <problem>
+    <question>In a 1D convolution with an input vector $x \in \mathbb{R}^5$ and a kernel $k \in \mathbb{R}^2$ (elements $k_1, k_2$) with zero padding, as shown in Figure 1 of the exercise, how is the output element $y_3$ computed?</question>
+    <answers>
+      <answer correct="false">$y_3 = k_1 \cdot x_3$</answer>
+      <answer correct="true">$y_3 = k_1 \cdot x_3 + k_2 \cdot x_2$</answer>
+      <answer correct="false">$y_3 = k_1 \cdot x_2 + k_2 \cdot x_3$</answer>
+      <answer correct="false">$y_3 = k_1 \cdot x_1 + k_2 \cdot x_2 + 0 \cdot x_3$</answer>
+    </answers>
+    <explanation>According to Equation (2) in the exercise, $y_i = \sum_{j=1}^{2} k_j \cdot x_{i-j+1}$ for $i = 2...5$. For $y_3$, this means $y_3 = k_1 \cdot x_{3-1+1} + k_2 \cdot x_{3-2+1} = k_1 \cdot x_3 + k_2 \cdot x_2$. This also matches the structure of the convolution matrix $M$ in Equation (3), where the third row is $[0, k_2, k_1, 0, 0]$, so $y_3 = 0 \cdot x_1 + k_2 \cdot x_2 + k_1 \cdot x_3 + 0 \cdot x_4 + 0 \cdot x_5$. (Assuming $x_0$ is implicitly 0 due to "zero padding" mentioned in the problem, but the figure implies $x_1$ is the first element. The provided matrix M is the definitive guide here for $y = Mx$).</explanation>
+  </problem>
+  <problem>
+    <question>What is the primary characteristic of "parameter sharing" in convolutional layers as described in part 1(d) of the exercise?</question>
+    <answers>
+      <answer correct="false">Each connection between input and output neurons has a unique weight.</answer>
+      <answer correct="true">The same set of weights (kernel parameters) are used across different spatial locations of the input.</answer>
+      <answer correct="false">Parameters are shared only between adjacent neurons in the output layer.</answer>
+      <answer correct="false">The number of parameters is equal to the number of input neurons multiplied by the number of output neurons.</answer>
+    </answers>
+    <explanation>Parameter sharing in convolutional layers means that the same kernel (with its weights) is applied at different positions in the input. This allows the network to detect the same feature regardless of its location and drastically reduces the number of parameters compared to a fully connected layer. The exercise states: "the convolution layer has only 2 parameters which are reused for multiple times".</explanation>
+  </problem>
+  <problem>
+    <question>In the 2D convolution example (Exercise 2, Forward pass), given the input $X$ and kernel $K$, what is the value of $Y_{0,0}$ (top-left element of $Y = X * K$) using "valid" padding as described by Equation (4)?</question>
+    <answers>
+      <answer correct="false">$Y_{0,0} = 1 \cdot 0 + 0 \cdot 0 + 1 \cdot 1 + 0 \cdot 0 + 1 \cdot 1 + 0 \cdot 0 + 0 \cdot 1 + 1 \cdot 1 + 0 \cdot 0 = 3$</answer>
+      <answer correct="true">$Y_{0,0} = (1 \cdot 1) + (0 \cdot 1) + (1 \cdot 0) + (0 \cdot 0) + (1 \cdot 1) + (0 \cdot 1) + (0 \cdot 1) + (1 \cdot 1) + (0 \cdot 1) = 3$</answer>
+      <answer correct="false">$Y_{0,0} = (1 \cdot 0) + (0 \cdot 0) + (1 \cdot 1) + (0 \cdot 1) + (1 \cdot 0) + (0 \cdot 1) + (0 \cdot 1) + (1 \cdot 1) + (0 \cdot 0) = 2$</answer>
+      <answer correct="false">$Y_{0,0} = (1 \cdot 1) + (0 \cdot 0) + (1 \cdot 1) + (0 \cdot 1) + (1 \cdot 0) + (0 \cdot 1) + (0 \cdot 1) + (1 \cdot 0) + (0 \cdot 1) = 3$</answer>
+    </answers>
+    <explanation>Equation (4) for $Y_{i,j}$ uses $x_{2+i-m, 2+j-n} \cdot k_{m,n}$. For $Y_{0,0}$ (i=0, j=0), the kernel $K$ is applied to the top-left 3x3 subgrid of $X$ starting at $X_{1,1}$ (using 0-indexed $X$ as in typical programming, or $X_{2,2}$ if using 1-indexed as in the formula explanation).
+</explanation>
+  </problem>
+  <problem>
+    <question>What is the definition of a linear transform $T$ as given in the lecture slides (slide 28 of CNN_Combined.pdf, page 27 of Part1)?</question>
+    <answers>
+      <answer correct="true">$T(\alpha u + \beta v) = \alpha T(u) + \beta T(v)$</answer>
+      <answer correct="false">$T(f(u)) = T(u)$ for invariant</answer>
+      <answer correct="false">$T(f(u)) = f(T(u))$ for equivariant</answer>
+      <answer correct="false">$T(u+v) = T(u) + T(v)$ and $T(\alpha u) = \alpha T(u)$ for scalars $\alpha, \beta$.</answer>
+    </answers>
+    <explanation>A transform $T$ is linear if, for any vectors $u, v$ and scalars $\alpha, \beta$, the property $T(\alpha u + \beta v) = \alpha T(u) + \beta T(v)$ holds. The last option is also a definition of linearity but the slides use the combined form.</explanation>
+  </problem>
+  <problem>
+    <question>According to the lecture (slide 30 of CNN_Combined.pdf, page 29 of Part1), what is the relationship between correlation $I'(i,j) = \sum_{m=-k}^{k} \sum_{n=-k}^{k} K(m,n)I(i+m, j+n)$ and convolution $I'(i,j) = \sum_{m=-k}^{k} \sum_{n=-k}^{k} K(m,n)I(i-m, j-n)$?</question>
+    <answers>
+      <answer correct="false">They are always identical.</answer>
+      <answer correct="true">Correlation is equivalent to convolution if the kernel $K$ is symmetric, i.e., $K(i,j) = K(-i,-j)$.</answer>
+      <answer correct="false">Convolution is correlation with the input image $I$ flipped.</answer>
+      <answer correct="false">Correlation is always performed with a flipped kernel in deep learning.</answer>
+    </answers>
+    <explanation>The slide states: "So if $K(i,j) = K(-i, -j)$, then Correlation == Convolution". This means if the kernel is symmetric (or flipped version of itself), the two operations yield the same result. Convolution can be expressed as correlation with a flipped kernel: $\sum \sum K(-m,-n)I(i+m, j+n)$.</explanation>
+  </problem>
+  <problem>
+    <question>In a CNN layer, if an input image is $32 \times 32 \times 3$ and it's convolved with a $5 \times 5 \times 3$ filter, what is the dimension of the resulting activation if no padding is used and stride is 1?</question>
+    <answers>
+      <answer correct="true">$28 \times 28 \times 1$</answer>
+      <answer correct="false">$32 \times 32 \times 1$</answer>
+      <answer correct="false">$28 \times 28 \times 3$</answer>
+      <answer correct="false">$5 \times 5 \times 1$</answer>
+    </answers>
+    <explanation>The filter depth must match the input depth (3). A single filter produces a 2D activation map. The spatial dimensions are calculated as $(N-F)/S + 1$. Here, $N=32$ (input size), $F=5$ (filter size), $S=1$ (stride). So, $(32-5)/1 + 1 = 27+1 = 28$. Thus, the activation map is $28 \times 28$. Since it's one filter, the depth of this activation map is 1. (See slides 16-20 of CNN_Combined.pdf, pages 15-19 of Part1).</explanation>
+  </problem>
+  <problem>
+    <question>What happens to the output size of a convolution operation if "no padding" is used, as mentioned on slide 22 of CNN_Combined.pdf (page 18 of Part1)?</question>
+    <answers>
+      <answer correct="false">Output size increases by $2 \times \text{floor}(M/2)$, where $M$ is kernel size.</answer>
+      <answer correct="true">Output size decreases by $2 \times \text{floor}(M/2)$, where $M$ is kernel size (assuming square odd kernel $M \times M$). More generally, $(N-F)/S + 1$. If $S=1$, output is $N-F+1$. If $F = M$, $N-M+1$. The decrease is $N-(N-M+1)=M-1$. $M-1 = 2 \times \text{floor}(M/2)$ for odd $M$.</answer>
+      <answer correct="false">Output size remains the same.</answer>
+      <answer correct="false">Output size is halved.</answer>
+    </answers>
+    <explanation>The slide states "No padding: output size decreases by $2 * \text{floor}(M/2)$". For an input of size $N$ and a filter of size $F$ (here $F=M$), the output size is $N-F+1$ (with stride 1). The decrease from $N$ is $N - (N-F+1) = F-1$. If $F$ is an odd number, $F=2k+1$, then $F-1 = 2k$. And $\text{floor}(F/2) = \text{floor}((2k+1)/2) = k$. So $2 \times \text{floor}(F/2) = 2k = F-1$. This matches the formula on the slide.</explanation>
+  </problem>
+  <problem>
+    <question>In the backward pass for a CNN layer, how is the sensitivity to inputs $\delta^{(l-1)}$ (i.e., $\partial \mathcal{L} / \partial Z^{(l-1)}$) computed from the sensitivity of the current layer $\delta^{(l)}$ (i.e., $\partial \mathcal{L} / \partial Z^{(l)}$) and the weights $W^{(l)}$?</question>
+    <answers>
+      <answer correct="false">It is a standard convolution of $\delta^{(l)}$ with $W^{(l)}$.</answer>
+      <answer correct="true">It is a "full" convolution of $\delta^{(l)}$ with the kernel $W^{(l)}$ flipped 180 degrees (or cross-correlation with $W^{(l)}$ if $\delta^{(l)}$ is padded, corresponding to a "full" convolution mathematically).</answer>
+      <answer correct="false">It is an element-wise product of $\delta^{(l)}$ and $W^{(l)}$.</answer>
+      <answer correct="false">It is a cross-correlation of $\delta^{(l)}$ with $W^{(l)}$.</answer>
+    </answers>
+    <explanation>Slide 35 of CNN_Combined.pdf (page 31 of Part1) shows $\delta^{(l-1)} = \delta^{(l)} * \text{FLIP}(W^{(l)})$, where $*$ denotes convolution and FLIP means flipping the kernel 180 degrees. This is often referred to as a "full" convolution in some contexts, especially when padding is used to ensure all elements of $W^{(l)}$ contribute. Standard "convolution" in DL is often cross-correlation, so true convolution involves flipping the kernel.</explanation>
+  </problem>
+  <problem>
+    <question>What is the primary purpose of a Max-Pooling layer in a CNN?</question>
+    <answers>
+      <answer correct="false">To increase the dimensionality of the feature maps.</answer>
+      <answer correct="false">To apply a non-linear activation function.</answer>
+      <answer correct="true">To reduce the spatial dimensions of the feature maps (downsampling) and provide a degree of translation invariance.</answer>
+      <answer correct="false">To learn important features by adjusting weights.</answer>
+    </answers>
+    <explanation>Max-Pooling layers are used for downsampling, which reduces the spatial resolution of the feature maps. This helps in reducing computational cost, controlling overfitting, and providing some translation invariance by selecting the maximum activation over a local region. (See slide 40 of CNN_Combined.pdf, page 36 of Part1).</explanation>
+  </problem>
+  <problem>
+    <question>What is a key characteristic of a Fully Convolutional Network (FCN) as discussed in the lecture (slides 46+ of CNN_Combined.pdf, page 42+ of Part1)?</question>
+    <answers>
+      <answer correct="false">It contains at least one fully connected layer at the end for classification.</answer>
+      <answer correct="true">It consists only of convolutional layers (and pooling/upsampling), allowing it to process inputs of arbitrary sizes and produce output maps.</answer>
+      <answer correct="false">It uses significantly more parameters than a traditional CNN with fully connected layers.</answer>
+      <answer correct="false">It can only perform image classification tasks.</answer>
+    </answers>
+    <explanation>Fully Convolutional Networks replace all fully connected layers with convolutional layers. This allows them to take inputs of any spatial dimension and produce output maps (e.g., segmentation maps) that correspond spatially to the input. (Slide 47: "Because of the dense layer the input size must be fixed." FCNs solve this. Slide 55: "Cut final fully connected layers...").</explanation>
+  </problem>
+  <problem>
+    <question>In the context of upsampling in FCNs, what is "Max Unpooling" as described on slide 63 of CNN_Combined.pdf (page 59 of Part1)?</question>
+    <answers>
+      <answer correct="false">It duplicates each input value into a $2 \times 2$ block in the output.</answer>
+      <answer correct="false">It fills the output with zeros except for the input values placed at the top-left of each block.</answer>
+      <answer correct="true">It uses the positions of the maximum values recorded during a corresponding Max Pooling operation to place the input values into the upsampled output, filling other positions with zeros.</answer>
+      <answer correct="false">It performs a learned deconvolution operation.</answer>
+    </answers>
+    <explanation>Max Unpooling uses the "switches" or indices from the forward pass of a Max Pooling layer to place the values from the smaller feature map back into their original "max" locations in the larger, upsampled feature map. The other locations are typically filled with zeros. (Slide 63 of CNN_Combined.pdf, page 59 of Part1)</explanation>
+  </problem>
+  <problem>
+    <question>What is a primary advantage of using "strided upconvolution" (transposed convolution) for upsampling in FCNs, according to slide 68 of CNN_Combined.pdf (page 64 of Part1)?</question>
+    <answers>
+      <answer correct="false">It is computationally cheaper than all other unpooling methods.</answer>
+      <answer correct="false">It always produces sharper upsampled images than Max Unpooling.</answer>
+      <answer correct="true">The upsampling operation is learned, allowing the network to decide the best way to upsample.</answer>
+      <answer correct="false">It does not require storing any information from a downsampling path.</answer>
+    </answers>
+    <explanation>Slide 68 lists benefits: "It is learned – the data decides what’s the best way to do it." This means the parameters of the transposed convolution are learned during training, adapting the upsampling process to the specific task.</explanation>
+  </problem>
+  <problem>
+    <question>What was the key innovation in ResNet (Residual Networks) that allowed for training very deep neural networks, as shown on slide 86 of CNN_Combined.pdf (page 82 of Part1)?</question>
+    <answers>
+      <answer correct="false">Using smaller $3 \times 3$ convolutional filters exclusively.</answer>
+      <answer correct="false">Employing "Inception modules" for computational efficiency.</answer>
+      <answer correct="true">Introducing "skip connections" or "residual blocks" that allow the network to learn an identity mapping if needed, by adding the input $x$ to the output of a block $F(x)$.</answer>
+      <answer correct="false">Replacing all pooling layers with strided convolutions.</answer>
+    </answers>
+    <explanation>ResNet introduced residual blocks where the input $x$ to a block is added to the output $F(x)$ of the block, resulting in $H(x) = F(x) + x$. These skip connections make it easier for layers to learn an identity mapping, which helps in training much deeper networks by mitigating the vanishing/exploding gradient problem and the degradation problem. (Slide 86, "Residual net", $H(x) = F(x)+x$).</explanation>
+  </problem>
+  <problem>
+    <question>In the HMAX model, what is the role of S-cells (simple cells)?</question>
+    <answers>
+      <answer correct="true">They are tuned to specific stimuli (like oriented edges) and perform template matching, typically over small receptive fields.</answer>
+      <answer correct="false">They combine outputs from C-cells to increase invariance.</answer>
+      <answer correct="false">They perform max-pooling over their inputs.</answer>
+      <answer correct="false">They implement a supervised learning component for task-dependent learning.</answer>
+    </answers>
+    <explanation>Slide 15 of the CNN_Combined.pdf (page 15 of Part1) states: "S (simple) cells are tuned to specific stimuli and have typically small receptive fields." Slide 16 shows the S-cell response as template matching: $y = \exp(-\frac{1}{2\sigma^2} \sum_{j=1}^{n_{S_k}} (w_j - x_j)^2)$.</explanation>
+  </problem>
+  <problem>
+    <question>What does "equivariance" of a transform $T$ to a function $f$ mean, according to slide 28 of CNN_Combined.pdf (page 27 of Part1)?</question>
+    <answers>
+      <answer correct="false">$T(f(u)) = T(u)$</answer>
+      <answer correct="true">$T(f(u)) = f(T(u))$</answer>
+      <answer correct="false">$T(\alpha u + \beta v) = \alpha T(u) + \beta T(v)$</answer>
+      <answer correct="false">$f(T(u)) = u$</answer>
+    </answers>
+    <explanation>A transform $T$ is equivariant to a function $f$ (like translation) if applying the function $f$ to the input and then the transform $T$ yields the same result as applying the transform $T$ first and then the function $f$. That is, $T(f(u)) = f(T(u))$. Convolutions are typically equivariant to translation. (Slide 28)</explanation>
+  </problem>
+  <problem>
+    <question>What is the purpose of $1 \times 1$ convolutions in architectures like GoogLeNet's Inception module, as discussed on slide 81 of CNN_Combined.pdf (page 77 of Part1)?</question>
+    <answers>
+      <answer correct="false">To increase the spatial resolution of feature maps.</answer>
+      <answer correct="false">To act as a non-linear activation function.</answer>
+      <answer correct="true">To perform dimensionality reduction (or increase) across channels, acting like a channel-wise fully connected layer, reducing computational cost before larger convolutions.</answer>
+      <answer correct="false">To implement skip connections similar to ResNet.</answer>
+    </answers>
+    <explanation>Slide 81 states: "Dimensionality reduction via $1 \times 1$ convolutions. e.g., 124x124x64 becomes 124x124x32 via a $1 \times 1$ convolution kernel with input channel 64 and output channel 32. It is equivalent to a linear layer 64 -> 32." This reduces the number of channels (depth) before applying more expensive $3 \times 3$ or $5 \times 5$ convolutions, thus reducing computation.</explanation>
+  </problem>
+  <problem>
+    <question>In the 1D convolution example from Exercise 1, if the input vector $x \in \mathbb{R}^5$ and kernel $k \in \mathbb{R}^2$, what is the third row of the convolution matrix $M$ that transforms $x$ to $y$ (i.e., $y = Mx$)?</question>
+    <answers>
+      <answer correct="false">$[k_1, k_2, 0, 0, 0]$</answer>
+      <answer correct="false">$[0, k_1, k_2, 0, 0]$</answer>
+      <answer correct="true">$[0, k_2, k_1, 0, 0]$</answer>
+      <answer correct="false">$[0, 0, k_1, k_2, 0]$</answer>
+    </answers>
+    <explanation>The convolution matrix $M$ is given by Equation (3) in the exercise. The third row of this matrix is explicitly shown as $[0, k_2, k_1, 0, 0]$. This row is used to compute $y_3 = k_2 x_2 + k_1 x_3$.</explanation>
+  </problem>
+  <problem>
+    <question>In the backward pass for a 2D convolution (Method 2 in Exercise 2), how is the gradient with respect to the input $\partial E/\partial X$ computed?</question>
+    <answers>
+      <answer correct="false">By convolving $\partial E/\partial Y$ with the original kernel $K$.</answer>
+      <answer correct="true">By convolving $\partial E/\partial Y$ with the kernel $K$ rotated by 180 degrees, i.e., $\partial E/\partial X = \partial E/\partial Y * \text{rot180}(K)$.</answer>
+      <answer correct="false">By cross-correlating $\partial E/\partial Y$ with the original kernel $K$.</answer>
+      <answer correct="false">By cross-correlating $X$ with $\text{rot180}(\partial E/\partial Y)$.</answer>
+    </answers>
+    <explanation>Page 3 of the exercise sheet, under "Method 2", states: "As derived in the lecture, $\partial E/\partial X = \partial E/\partial Y * \text{rot180}(K)$." Here, $*$ denotes convolution.</explanation>
+  </problem>
+  <problem>
+    <question>What is a key characteristic of the LeNet-5 architecture, as shown on slide 21 of CNN_Combined.pdf (page 20 of Part1)?</question>
+    <answers>
+      <answer correct="false">It exclusively uses $3 \times 3$ filters and residual connections.</answer>
+      <answer correct="false">It was the first model to win the ImageNet challenge by a large margin.</answer>
+      <answer correct="true">It featured alternating layers of convolutions and subsampling (pooling), followed by fully connected layers for classification.</answer>
+      <answer correct="false">It introduced the concept of Inception modules for computational efficiency.</answer>
+    </answers>
+    <explanation>The diagram of LeNet-5 on slide 21 shows an architecture with input, followed by C1 (convolution), S2 (subsampling), C3 (convolution), S4 (subsampling), C5 (convolution), F6 (full connection), and an output layer. This pattern of alternating convolution and subsampling is a hallmark of early CNNs like LeNet-5, designed for tasks like document recognition.</explanation>
+  </problem>
+  <problem>
+    <question>When performing max-pooling, what is the rule for backpropagating the error signal $\delta^{(l)}$ from the output of the pooling layer to its input $\delta^{(l-1)}$?</question>
+    <answers>
+      <answer correct="false">The error is distributed equally to all inputs within the pooling window.</answer>
+      <answer correct="false">The error is passed only to the input with the smallest value in the pooling window.</answer>
+      <answer correct="true">The error is passed only to the input that had the maximum value in the forward pass within that pooling window; other inputs receive zero error.</answer>
+      <answer correct="false">The error is multiplied by the weights of the pooling layer (which are all 1).</answer>
+    </answers>
+    <explanation>Slide 42 of CNN_Combined.pdf (page 38 of Part1) describes the backward pass for max-pooling: $\frac{\partial z^{(l)}}{\partial z_i^{(l-1)}} = 1$ if $i=i^*$ (where $i^*$ is the index of the max element) and $0$ otherwise. Thus, $\delta^{(l-1)} = \{\delta^{(l)}\}_{i^*}$, meaning the error $\delta^{(l)}$ is routed entirely to the location $i^*$ that was maximal in the forward pass.</explanation>
+  </problem>
+  <problem>
+    <question>What is "dilated convolution" (or atrous convolution), as mentioned on slide 43 of CNN_Combined.pdf (page 39 of Part1)?</question>
+    <answers>
+      <answer correct="false">A convolution with a very small stride, leading to upsampling.</answer>
+      <answer correct="true">A convolution where the kernel is applied to an input with defined gaps, effectively increasing the receptive field without increasing the number of parameters or computational cost significantly.</answer>
+      <answer correct="false">A convolution that uses filters of varying sizes within the same layer.</answer>
+      <answer correct="false">A convolution operation performed in the frequency domain.</answer>
+    </answers>
+    <explanation>Slide 43 describes dilated convolution: "Dilate the kernel. Increases Receptive Field." This means the kernel elements are spaced out, allowing the filter to cover a larger area of the input without increasing the kernel size or computation for the same number of kernel weights. This helps in capturing broader context while maintaining resolution.</explanation>
+  </problem>
+  <problem>
+    <question>How can a standard CNN, originally designed for fixed-size input classification, be converted into a Fully Convolutional Network (FCN) for tasks like semantic segmentation?</question>
+    <answers>
+      <answer correct="false">By adding more pooling layers to reduce dimensionality.</answer>
+      <answer correct="true">By replacing any fully connected layers with equivalent convolutional layers (e.g., a fully connected layer can be seen as a convolution with a kernel size matching the input feature map size).</answer>
+      <answer correct="false">By removing all convolutional layers and keeping only fully connected layers.</answer>
+      <answer correct="false">By training the network with data augmentation that includes inputs of various sizes.</answer>
+    </answers>
+    <explanation>Slides 55 and onwards in CNN_Combined.pdf (page 51+ of Part1) discuss FCNs. One key step is to "Cut final fully connected layers, treat feature maps as segmentation predictions" (slide 55). More generally, fully connected layers can be converted to convolutional layers. For instance, a dense layer operating on a $7 \times 7 \times 512$ feature map to produce 4096 outputs can be replaced by a $7 \times 7$ convolution with 4096 filters. This allows the network to process variable-sized inputs and produce spatial output maps.</explanation>
+  </problem>
+  <problem>
+    <question>What is the "Bed of Nails" method for upsampling, as shown on slide 62 of CNN_Combined.pdf (page 58 of Part1)?</question>
+    <answers>
+      <answer correct="true">Input values are placed into an upsampled grid (e.g., at the top-left of each $2 \times 2$ block if upsampling by 2), and the remaining positions are filled with zeros.</answer>
+      <answer correct="false">Each input value is replicated to fill a block in the upsampled grid (e.g., a $2 \times 2$ block).</answer>
+      <answer correct="false">It uses bilinear interpolation to fill the upsampled grid.</answer>
+      <answer correct="false">It learns an upsampling filter through transposed convolution.</answer>
+    </answers>
+    <explanation>Slide 62 illustrates "Bed of Nails" upsampling. For an input like $\begin{pmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{pmatrix}$, the output is $\begin{pmatrix} 1 &amp; 0 &amp; 2 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 \\ 3 &amp; 0 &amp; 4 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{pmatrix}$ (example for upsampling factor of 2, placing input at top-left of $2\times2$ sub-blocks). The input values are sparsely placed in the larger output grid, and other values are set to zero.</explanation>
+  </problem>
+  <problem>
+    <question>According to Zeiler &amp; Fergus (2014), as presented on slide 74 of CNN_Combined.pdf (page 70 of Part1), what technique can be used to understand which patterns in the input led to a given activation map?</question>
+    <answers>
+      <answer correct="false">Max pooling and average pooling.</answer>
+      <answer correct="false">Applying dropout to the input layer.</answer>
+      <answer correct="true">Using Deconvolution (or transposed convolution) and unpooling to project activation maps back to the input pixel space.</answer>
+      <answer correct="false">Analyzing the weights of the final fully connected layer.</answer>
+    </answers>
+    <explanation>Slide 74 summarizes Zeiler &amp; Fergus's work: "Find out which pattern in the input has led to a given activation map. Use Deconvolution to project activation maps back to inputs." This involves reversing the operations of a CNN (convolution, ReLU, pooling) to visualize the input features that cause high activations in higher layers.</explanation>
+  </problem>
+  <problem>
+    <question>What is a characteristic of the VGG network architecture compared to earlier models like AlexNet, as discussed on slide 78 of CNN_Combined.pdf (page 74 of Part1)?</question>
+    <answers>
+      <answer correct="false">It uses very large convolutional filters (e.g., $11 \times 11$) in all layers.</answer>
+      <answer correct="true">It features increased depth (more layers) but uses exclusively small $3 \times 3$ convolutional filters, leading to larger receptive fields despite smaller filters and fewer parameters per filter.</answer>
+      <answer correct="false">It has fewer layers but incorporates Inception modules for efficiency.</answer>
+      <answer correct="false">It was the first network to use residual connections.</answer>
+    </answers>
+    <explanation>Slide 78 highlights VGG's characteristics: "Smaller filters. More layers." and "Due to depth: Large receptive field, Despite smaller filters." VGG networks demonstrated that a stack of small $3 \times 3$ filters can achieve the same receptive field as a larger filter (e.g., three $3 \times 3$ layers have an effective receptive field of a $7 \times 7$ layer) but with more non-linearities and fewer parameters.</explanation>
+  </problem>
+</problems>

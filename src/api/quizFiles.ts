@@ -5,7 +5,7 @@ export interface QuizFile {
 
 export const fetchQuizFiles = async (): Promise<QuizFile[]> => {
   try {
-    const response = await fetch('/api/quizzes');
+    const response = await fetch('/mp_quiz/quiz-files.json');
     if (!response.ok) {
       throw new Error('Failed to fetch quiz files');
     }

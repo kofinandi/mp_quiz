@@ -84,7 +84,7 @@ export const Quiz: React.FC<QuizProps> = ({ problems }) => {
         />
       </Box>
       {problems.map((problem, problemIndex) => (
-        <Card key={problemIndex} sx={{ mb: 2, width: 800 }}>
+        <Card key={problemIndex} sx={{ mb: 2, width: 1200 }}>
           <CardContent>
             <Typography variant="h6" gutterBottom>
               {problem.question.split('$').map((part, i) => 
