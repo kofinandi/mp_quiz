@@ -11,7 +11,7 @@ export default defineConfig({
     {
       name: 'quiz-files',
       configureServer(server) {
-        server.middlewares.use('/api/quizzes', (_, res) => {
+        server.middlewares.use('/mp_quiz/api/quizzes', (_, res) => {
           const publicDir = path.join(process.cwd(), 'public')
           try {
             const files = fs.readdirSync(publicDir)
