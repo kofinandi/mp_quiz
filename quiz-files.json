@@ -1,14 +1,10 @@
 [
   {
-    "name": "Cnn",
-    "path": "/mp_quiz/cnn.xml"
+    "name": "CNNs",
+    "path": "/mp_quiz/CNNs.xml"
   },
   {
-    "name": "Quiz",
-    "path": "/mp_quiz/quiz.xml"
-  },
-  {
-    "name": "Vae",
-    "path": "/mp_quiz/vae.xml"
+    "name": "NNs",
+    "path": "/mp_quiz/NNs.xml"
   }
 ]

@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<problems>
+<problem>
+<question>In the context of a single neuron (perceptron) as described in the lecture, if the input is $\mathbf{x} \in \mathbb{R}^n$ and parameters are $\mathbf{w} \in \mathbb{R}^n$ and $b \in \mathbb{R}$, what is the common shorthand for the parameters $\theta$?</question>
+<answers>
+<answer correct="true">$\theta = \{\mathbf{w}, b\}$</answer>
+<answer>$\theta = \{\mathbf{x}, b\}$</answer>
+<answer>$\theta = \{\mathbf{w}, \mathbf{x}\}$</answer>
+<answer>$\theta = \mathbf{w} / b$</answer>
+</answers>
+<explanation>Slide 6 of the first lecture ("Neuron – An Engineering Blueprint") states: "Remark 1: we will often use the shorthand: $\theta = \{\mathbf{w}, b\}$ in the remainder of this course."</explanation>
+</problem>
+
+<problem>
+<question>What is the update rule for the Perceptron Learning Algorithm for a misclassified point $i$ with learning rate $\eta$, true label $y_i$, predicted label $\hat{y}_i$, and input $\mathbf{x}_i$?</question>
+<answers>
+<answer correct="true">$\theta^{\{k+1\}} = \theta^{\{k\}} + \eta(y_i - \hat{y}_i)\mathbf{x}_i$</answer>
+<answer>$\theta^{\{k+1\}} = \theta^{\{k\}} - \eta(y_i - \hat{y}_i)\mathbf{x}_i$</answer>
+<answer>$\theta^{\{k+1\}} = \theta^{\{k\}} + \eta(\hat{y}_i - y_i)\mathbf{x}_i$</answer>
+<answer>$\theta^{\{k+1\}} = \theta^{\{k\}} + \eta(y_i - \hat{y}_i)\theta^{\{k\}}$</answer>
+</answers>
+<explanation>Slide 7 of the first lecture ("Perceptron Learning Algorithm") provides the update rule as: $\theta^{\{k+1\}} = \theta^{\{k\}} + \eta(y_i - \hat{y}_i)\mathbf{x}_i$. The term $(y_i - \hat{y}_i)$ is the residual.</explanation>
+</problem>
+
+<problem>
+<question>If we re-parameterize labels to be $y \in \{-1, 1\}$ for a perceptron, and use the Hinge Loss $L = \max(0, 1 - y_i \theta^T \mathbf{x}_i)$, what is the gradient $\nabla_\theta L$ if the point $\mathbf{x}_i$ is misclassified (i.e., $y_i \theta^T \mathbf{x}_i &lt; 1$)?</question>
+<answers>
+<answer correct="true">$\nabla_\theta L = -y_i \mathbf{x}_i$</answer>
+<answer>$\nabla_\theta L = y_i \mathbf{x}_i$</answer>
+<answer>$\nabla_\theta L = \mathbf{x}_i$</answer>
+<answer>$\nabla_\theta L = -\theta$</answer>
+</answers>
+<explanation>Slide 12 of the first lecture ("Perceptron Learning Algorithm") states that for Hinge Loss $L = \max(0, 1 - y_i \theta^T \mathbf{x}_i)$, the gradient (if misclassified) is $\nabla_\theta L = -y_i \mathbf{x}_i$.</explanation>
+</problem>
+
+<problem>
+<question>What is the primary role of non-linearity (e.g., synapses in biological neurons, activation functions in artificial neurons) in neural networks?</question>
+<answers>
+<answer correct="true">It allows the network to learn complex, non-linear mappings between inputs and outputs.</answer>
+<answer>It primarily speeds up the computation of gradients during backpropagation.</answer>
+<answer>It ensures that the weights of the network remain bounded.</answer>
+<answer>It simplifies the mathematical analysis of the network's convergence properties.</answer>
+</answers>
+<explanation>Slide 15 of the first lecture mentions synapses as an "Important source of non-linearity". Slide 26 of the second lecture emphasizes that without non-linear activation functions, an MLP becomes a simple affine mapping. Non-linearities are crucial for learning complex patterns.</explanation>
+</problem>
+
+<problem>
+<question>In Maximum Likelihood Estimation (MLE), if we have a dataset $D = \{(\mathbf{x}^{(i)}, y^{(i)})\}_{i=1}^N$ and a model $p_{\text{model}}(y|\mathbf{x}, \theta)$, how is the conditional maximum likelihood estimator $\theta_{MLE}^*$ defined?</question>
+<answers>
+<answer correct="true">$\theta_{MLE}^* = \text{argmax}_\theta \sum_{i=1}^N \log p_{\text{model}}(y^{(i)}|\mathbf{x}^{(i)}, \theta)$</answer>
+<answer>$\theta_{MLE}^* = \text{argmin}_\theta \sum_{i=1}^N \log p_{\text{model}}(y^{(i)}|\mathbf{x}^{(i)}, \theta)$</answer>
+<answer>$\theta_{MLE}^* = \text{argmax}_\theta \prod_{i=1}^N p_{\text{model}}(\mathbf{x}^{(i)}|y^{(i)}, \theta)$</answer>
+<answer>$\theta_{MLE}^* = \text{argmax}_\theta \sum_{i=1}^N p_{\text{model}}(y^{(i)}|\mathbf{x}^{(i)}, \theta)$</answer>
+</answers>
+<explanation>Slide 22 of the first lecture ("Maximum Likelihood Estimation") shows that the conditional MLE is found by maximizing the sum of log-likelihoods (or product of likelihoods) over the dataset: $\theta_{MLE}^* = \text{argmax}_\theta \sum_{i=1}^N \log p_{\text{model}}(y^{(i)}|\mathbf{x}^{(i)}, \theta)$.</explanation>
+</problem>
+
+<problem>
+<question>Which function is commonly used as an activation for the output layer in binary classification problems to ensure the output is between [0, 1] and can be interpreted as a probability?</question>
+<answers>
+<answer correct="true">Sigmoid function: $\sigma(x) = \frac{1}{1 + e^{-x}}$</answer>
+<answer>ReLU function: $\text{ReLU}(x) = \max(0, x)$</answer>
+<answer>Tanh function: $\tanh(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}$</answer>
+<answer>Linear function: $f(x) = x$</answer>
+</answers>
+<explanation>Slide 24 of the first lecture ("Binary classification and sigmoid function") introduces the sigmoid function for binary classification, noting its properties: output must be positive and between [0, 1]. The formula is $\sigma(x) = \frac{1}{1+e^{-x}}$.</explanation>
+</problem>
+
+<problem>
+<question>The Negative Log-Likelihood (NLL) for binary classification, where $\hat{y}^{(i)}$ is the predicted probability for class 1 and $y^{(i)} \in \{0,1\}$ is the true label, is also known as:</question>
+<answers>
+<answer correct="true">Binary Cross-Entropy loss</answer>
+<answer>Mean Squared Error (MSE) loss</answer>
+<answer>Hinge loss</answer>
+<answer>Kullback-Leibler (KL) divergence</answer>
+</answers>
+<explanation>Slide 25 of the first lecture ("MLE for Binary Classification") derives the NLL and explicitly states it is "cross-entropy". The formula is $L(\theta) = -\frac{1}{N} \sum (y^{(i)} \log(\hat{y}^{(i)}) + (1-y^{(i)}) \log(1-\hat{y}^{(i)}))$.</explanation>
+</problem>
+
+<problem>
+<question>If we choose $p_{\text{model}}(y|\mathbf{x}, \theta) = \mathcal{N}(y|\theta^T\mathbf{x}, \sigma^2)$ (a Gaussian distribution) for our model in MLE, what kind of estimator do we typically end up with?</question>
+<answers>
+<answer correct="true">Least squares (MSE) estimator</answer>
+<answer>Binary cross-entropy estimator</answer>
+<answer>$l_1$-norm (Laplacian) estimator</answer>
+<answer>Ridge regression estimator</answer>
+</answers>
+<explanation>Slide 29 of the first lecture ("Maximum Likelihood Estimators - Variations") states: "If we choose $p_{\text{model}}(y|\mathbf{x}, \theta) = \mathcal{N}(y|\theta^T\mathbf{x}, \sigma)$ to be Gaussian, we end up with the least squares (MSE) estimator: $w_{MLE}^* = \text{argmin}_w ||X\theta - y||_2^2$."</explanation>
+</problem>
+
+<problem>
+<question>What is the softmax function, often used for multi-class classification, for a vector of scores $\boldsymbol{\eta} = [\eta_1, \dots, \eta_C]$?</question>
+<answers>
+<answer correct="true">$\text{softmax}(\eta_i) = \frac{\exp(\eta_i)}{\sum_{j=1}^C \exp(\eta_j)}$</answer>
+<answer>$\text{softmax}(\eta_i) = \frac{\eta_i}{\sum_{j=1}^C \eta_j}$</answer>
+<answer>$\text{softmax}(\eta_i) = \max(0, \eta_i)$</answer>
+<answer>$\text{softmax}(\eta_i) = \frac{1}{1 + \exp(-\eta_i)}$</answer>
+</answers>
+<explanation>Slide 33 of the first lecture (Appendix - "Extending to Multiclass: Softmax") gives the formula for the softmax function as $\text{softmax}(\eta_i) = \frac{\exp(\eta_i)}{\sum_{j} \exp(\eta_j)}$.</explanation>
+</problem>
+
+<problem>
+<question>In the context of optimizing neural network parameters using gradient descent for Binary Cross-Entropy (BCE) loss, where $\hat{y} = \sigma(\theta^T\mathbf{x})$ and $y \in \{0,1\}$, what is the gradient of the loss $L(\hat{y}, y)$ with respect to $\theta$ for a single data point $(\mathbf{x}, y)$?</question>
+<answers>
+<answer correct="true">$\nabla_\theta L(\hat{y}, y) = (\hat{y} - y)\mathbf{x}$</answer>
+<answer>$\nabla_\theta L(\hat{y}, y) = (y - \hat{y})\mathbf{x}$</answer>
+<answer>$\nabla_\theta L(\hat{y}, y) = \hat{y}(1-\hat{y})\mathbf{x}$</answer>
+<answer>$\nabla_\theta L(\hat{y}, y) = -(y/\hat{y} - (1-y)/(1-\hat{y}))\mathbf{x}$</answer>
+</answers>
+<explanation>Slide 3 of the second lecture ("Optimization: How to find the model parameters?") states that the gradient for the BCE loss is given by $\nabla_\theta L(\hat{y}^{(i)}, y^{(i)}) = (\hat{y}^{(i)} - y^{(i)})\mathbf{x}^{(i)}$.</explanation>
+</problem>
+
+<problem>
+<question>What is the fundamental idea behind the backpropagation algorithm?</question>
+<answers>
+<answer correct="true">It efficiently computes the gradient of the loss function with respect to all network weights by applying the chain rule layer by layer, reusing computations.</answer>
+<answer>It directly solves for the optimal weights of the network using matrix inversion.</answer>
+<answer>It approximates the loss function with a quadratic Taylor expansion and finds its minimum.</answer>
+<answer>It randomly perturbs weights and keeps changes that reduce the loss, similar to evolutionary algorithms.</answer>
+</answers>
+<explanation>Slide 8 of the second lecture ("Backpropagation: In a Nutshell") states: "Backprop is a way to compute the chain rule that avoids re-computing the same terms multiple times (aka Dynamic Programming)." This means it efficiently computes gradients layer by layer.</explanation>
+</problem>
+
+<problem>
+<question>Consider a simple neural network layer where the loss is $L$, the output activation is $\hat{y} = \sigma(z)$, and the pre-activation is $z = a_1 w_1 + \dots$. According to the chain rule, how is $\frac{\partial L}{\partial w_1}$ expressed?</question>
+<answers>
+<answer correct="true">$\frac{\partial L}{\partial w_1} = \frac{\partial L}{\partial \hat{y}} \frac{\partial \hat{y}}{\partial z} \frac{\partial z}{\partial w_1}$</answer>
+<answer>$\frac{\partial L}{\partial w_1} = \frac{\partial L}{\partial z} \frac{\partial z}{\partial \hat{y}} \frac{\partial \hat{y}}{\partial w_1}$</answer>
+<answer>$\frac{\partial L}{\partial w_1} = \frac{\partial L}{\partial a_1} \frac{\partial a_1}{\partial z} \frac{\partial z}{\partial w_1}$</answer>
+<answer>$\frac{\partial L}{\partial w_1} = \frac{\partial L}{\partial \hat{y}} + \frac{\partial \hat{y}}{\partial z} + \frac{\partial z}{\partial w_1}$</answer>
+</answers>
+<explanation>Slide 12 of the second lecture ("Backpropagation: Output Layer") shows this application of the chain rule: $\frac{\partial L}{\partial w_1} = \frac{\partial L}{\partial \hat{y}} \frac{\partial \hat{y}}{\partial z} \frac{\partial z}{\partial w_1}$.</explanation>
+</problem>
+
+<problem>
+<question>In backpropagation, if $\delta_k^{[l+1]} = \frac{\partial L}{\partial a_k^{[l+1]}}$ is the error signal at the input (pre-activation $a_k^{[l+1]}$) of neuron $k$ in layer $l+1$, and $a_k^{[l+1]} = \sum_j w_{kj}^{[l+1]} z_j^{[l]} + b_k^{[l+1]}$ where $z_j^{[l]}$ is the output of neuron $j$ in layer $l$, how is the error signal $\frac{\partial L}{\partial z_j^{[l]}}$ (error at the output of neuron $j$ in layer $l$) computed?</question>
+<answers>
+<answer correct="true">$\frac{\partial L}{\partial z_j^{[l]}} = \sum_k \delta_k^{[l+1]} \sigma'(a_k^{[l+1]}) w_{kj}^{[l+1]}$ (assuming $\delta_k^{[l+1]}$ is error at output of neuron k, and $z_k^{[l+1]} = \sigma(a_k^{[l+1]})$ )</answer>
+<answer>$\frac{\partial L}{\partial z_j^{[l]}} = \sum_k \frac{\partial L}{\partial a_k^{[l+1]}} w_{jk}^{[l+1]}$</answer>
+<answer>$\frac{\partial L}{\partial z_j^{[l]}} = \prod_k \frac{\partial L}{\partial a_k^{[l+1]}} w_{kj}^{[l+1]}$</answer>
+<answer>$\frac{\partial L}{\partial z_j^{[l]}} = \frac{\partial L}{\partial a_j^{[l+1]}} \sigma'(a_j^{[l+1]})$</answer>
+</answers>
+<explanation>This follows from the chain rule. The error at $z_j^{[l]}$ is the sum of contributions to the error of all neurons in the next layer that $z_j^{[l]}$ connects to. Specifically, $\frac{\partial L}{\partial z_j^{[l]}} = \sum_k \frac{\partial L}{\partial a_k^{[l+1]}} \frac{\partial a_k^{[l+1]}}{\partial z_j^{[l]}}$. Given $a_k^{[l+1]} = \sum_j w_{kj}^{[l+1]} z_j^{[l]} + \dots$, then $\frac{\partial a_k^{[l+1]}}{\partial z_j^{[l]}} = w_{kj}^{[l+1]}$. If $\delta_k^{[l+1]}$ in the question means $\frac{\partial L}{\partial z_k^{[l+1]}}$, then we need an extra $\sigma'$ term. Slide 16 shows $\frac{\partial L}{\partial z_i^{[l-1]}} = \sum_j \frac{\partial L}{\partial z_j^{[l]}} \frac{\partial z_j^{[l]}}{\partial z_i^{[l-1]}}$. If $z_j^{[l]} = \sigma(a_j^{[l]})$ and $a_j^{[l]} = \sum_i W_{ji}^{[l]} z_i^{[l-1]}$, then $\frac{\partial z_j^{[l]}}{\partial z_i^{[l-1]}} = \sigma'(a_j^{[l]}) W_{ji}^{[l]}$. So, the error at the output $z_i^{[l-1]}$ is $\sum_j (\text{error at output } z_j^{[l]}) \cdot \sigma'(\text{pre-activation } a_j^{[l]}) \cdot W_{ji}^{[l]}$. The provided answer best matches this form if we interpret $\delta_k^{[l+1]}$ as the error at the *output* of neuron $k$ in layer $l+1$. A more precise question would define $\delta$ clearly.</explanation>
+</problem>
+
+<problem>
+<question>What happens if all activation functions in a Multi-Layer Perceptron (MLP) are linear (e.g., $\sigma(x) = \alpha x + \beta$)?</question>
+<answers>
+<answer correct="true">The entire MLP collapses into a single equivalent affine transformation, regardless of the number of layers.</answer>
+<answer>The MLP can still approximate any continuous function, but training becomes more difficult.</answer>
+<answer>The backpropagation algorithm can no longer be applied.</answer>
+<answer>The network becomes highly sensitive to the initialization of its weights.</answer>
+</answers>
+<explanation>Slide 26 of the second lecture ("Linear Activation Functions?") explains that if $\sigma$ is a linear transform, the resulting MLP is just an affine mapping with extra steps: $f(\mathbf{x}) = V^{[L]}\mathbf{x} + \mathbf{c}^{[L]}$. This means multiple linear layers can be represented by a single linear layer.</explanation>
+</problem>
+
+<problem>
+<question>The Universal Approximation Theorem (e.g., Cybenko's version) states that a single hidden layer feedforward network with a sufficient number of units and a suitable non-linear activation function can approximate any continuous function $f(\mathbf{x})$ arbitrarily well. What does this theorem NOT tell us?</question>
+<answers>
+<answer correct="true">It does not tell us anything about the chances of learning the correct parameters or how to find them.</answer>
+<answer>It does not specify the type of non-linear activation function required (e.g., sigmoidal).</answer>
+<answer>It does not guarantee that the approximation will be compact (i.e., requiring a finite number of hidden units).</answer>
+<answer>It does not apply to functions with discontinuities.</answer>
+</answers>
+<explanation>Slide 39 of the second lecture ("Universal approximation theorem") explicitly states: "It does not tell us anything about the chances of learning the correct parameters." While Cybenko's theorem focuses on sigmoidal activations, the general idea is about existence, not learnability or practical considerations like the number of units.</explanation>
+</problem>
+
+<problem>
+<question>What phenomenon was observed in the "Randomization Test" experiments (Zhang et al., 2017) regarding deep neural networks?</question>
+<answers>
+<answer correct="true">Deep neural networks can easily achieve zero training error even when training on data with random labels or random pixels.</answer>
+<answer>Deep neural networks generalize poorly when trained on small datasets, irrespective of label correctness.</answer>
+<answer>Explicit regularization (like weight decay) is strictly necessary for deep neural networks to fit the training data.</answer>
+<answer>The architecture of the neural network is the most critical factor for fitting random data, more so than the optimization algorithm.</answer>
+</answers>
+<explanation>Slides 45-50 of the second lecture discuss the Randomization Test. Slide 50 summarizes: "Easy to have zero training error even with random labelling and random inputs." This implies a high capacity to memorize, even noise.</explanation>
+</problem>
+
+<problem>
+<question>The "Double Descent" phenomenon in deep learning refers to the observation that:</question>
+<answers>
+<answer correct="true">Test error can first decrease, then increase (overfitting), and then decrease again as model complexity (e.g., width, number of parameters) or training time increases beyond a certain "interpolation threshold".</answer>
+<answer>Training error and test error both decrease twice during the training process due to two distinct phases of learning.</answer>
+<answer>The learning rate needs to be decreased twice (double descent) during training to achieve optimal performance.</answer>
+<answer>The bias of the model decreases twice, while the variance increases twice, leading to a complex trade-off.</answer>
+</answers>
+<explanation>Slide 54 of the second lecture ("The Phenomena of Double Descent") illustrates this. In the "Modern Regime: Larger Model is Better", test error decreases after initially increasing past the classical overfitting point, as model size/capacity grows beyond the interpolation threshold.</explanation>
+</problem>
+
+<problem>
+<question>What is the Effective Model Complexity (EMC), as proposed by Nakkiran et al. to help formalize the double descent phenomenon?</question>
+<answers>
+<answer correct="true">The maximum number of samples $n$ on which a given training procedure $\mathcal{T}$ achieves on average (near) zero training error.</answer>
+<answer>The total number of trainable parameters in the neural network model.</answer>
+<answer>A measure of the VC dimension of the model class used.</answer>
+<answer>The inverse of the generalization gap observed on a held-out test set.</answer>
+</answers>
+<explanation>Slide 57 of the second lecture ("How Do We Formalize Double Descent?") defines EMC: "Given training procedure $\mathcal{T}$, data samples $S = \{(\mathbf{x}_1, y_1), \dots, (\mathbf{x}_n, y_n)\}$, and outputs $\mathcal{T}(S)$, the EMC is the maximum number of samples $n$ on which $\mathcal{T}$ achieves on average zero training error."</explanation>
+</problem>
+
+<problem>
+<question>According to the multivariable chain rule for Jacobians, if $\mathbf{z} = f(\mathbf{y})$ and $\mathbf{y} = g(\mathbf{x})$, how is the Jacobian $\frac{\partial \mathbf{z}}{\partial \mathbf{x}}$ expressed?</question>
+<answers>
+<answer correct="true">$\frac{\partial \mathbf{z}}{\partial \mathbf{x}} = \frac{\partial \mathbf{z}}{\partial \mathbf{y}} \frac{\partial \mathbf{y}}{\partial \mathbf{x}}$</answer>
+<answer>$\frac{\partial \mathbf{z}}{\partial \mathbf{x}} = \frac{\partial \mathbf{y}}{\partial \mathbf{x}} \frac{\partial \mathbf{z}}{\partial \mathbf{y}}$</answer>
+<answer>$\frac{\partial \mathbf{z}}{\partial \mathbf{x}} = \frac{\partial \mathbf{z}}{\partial \mathbf{y}} + \frac{\partial \mathbf{y}}{\partial \mathbf{x}}$</answer>
+<answer>$\frac{\partial \mathbf{z}}{\partial \mathbf{x}} = (\frac{\partial \mathbf{z}}{\partial \mathbf{y}})^T \frac{\partial \mathbf{y}}{\partial \mathbf{x}}$</answer>
+</answers>
+<explanation>The Pen &amp; Paper Solutions, Section 1.1 ("Chain rule for Jacobians"), states this rule for Jacobians. It's also implied on Slide 7 of the second lecture ("Chain Rule with Vectors"), where $\frac{\partial z}{\partial \mathbf{y}}$ would be a row vector (gradient transpose) if $z$ is scalar, or a Jacobian if $z$ is vector. The standard matrix multiplication order for Jacobians is $\frac{\partial \mathbf{z}}{\partial \mathbf{y}} \frac{\partial \mathbf{y}}{\partial \mathbf{x}}$.</explanation>
+</problem>
+
+<problem>
+<question>In backpropagation for an MLP, if $\delta^l_i = \frac{\partial R}{\partial z^l_i}$ is the error signal at the output $z^l_i$ (post-activation) of neuron $i$ in layer $l$, and $z^l_i = \tanh(a^l_i)$ where $a^l_i = \sum_j W^l_{ij} z^{l-1}_j + b^l_i$, how is the gradient of the loss $R$ with respect to the weight $W^l_{ij}$ computed?</question>
+<answers>
+<answer correct="true">$\frac{\partial R}{\partial W^l_{ij}} = \delta^l_i (1 - \tanh^2(a^l_i)) z^{l-1}_j$</answer>
+<answer>$\frac{\partial R}{\partial W^l_{ij}} = \delta^l_i z^{l-1}_j$</answer>
+<answer>$\frac{\partial R}{\partial W^l_{ij}} = \delta^l_i (1 - \tanh^2(a^l_i)) W^l_{ij}$</answer>
+<answer>$\frac{\partial R}{\partial W^l_{ij}} = \sum_k \delta^{l+1}_k (1 - \tanh^2(a^{l+1}_k)) z^{l-1}_j$</answer>
+</answers>
+<explanation>This uses the chain rule: $\frac{\partial R}{\partial W^l_{ij}} = \frac{\partial R}{\partial z^l_i} \frac{\partial z^l_i}{\partial a^l_i} \frac{\partial a^l_i}{\partial W^l_{ij}}$.
+We have $\frac{\partial R}{\partial z^l_i} = \delta^l_i$.
+$\frac{\partial z^l_i}{\partial a^l_i} = \frac{d}{da^l_i} \tanh(a^l_i) = (1 - \tanh^2(a^l_i))$.
+$\frac{\partial a^l_i}{\partial W^l_{ij}} = z^{l-1}_j$.
+Combining these gives $\delta^l_i (1 - \tanh^2(a^l_i)) z^{l-1}_j$. This matches the derivation in the Pen &amp;Paper Solutions (page 4, combining results for $\frac{\partial R}{\partial w_{ij}^l} = \delta^l \frac{\partial z^l}{\partial w_{ij}^l}$ with $\frac{\partial z^l}{\partial w_{ij}^l} = \text{diag}(1-\tanh^2(a^l)) \cdot \text{vec}_i^T( (z^{l-1})^T )$ and simplifying for the scalar weight). Also aligns with slide 20 of the second lecture if $\delta_j^{[l]}$ is interpreted as post-activation error and $\sigma_j'$ is the derivative of the activation.</explanation>
+</problem>
+
+<problem>
+<question>According to the notation introduced on Slide 5 of the first lecture, how would you denote the values (e.g., activations) associated with layer $l$ of a neural network?</question>
+<answers>
+<answer correct="true">$\mathbf{x}^{[l]}$ or $X^{[l]}$</answer>
+<answer>$\mathbf{x}^{(l)}$ or $X^{(l)}$</answer>
+<answer>$\mathbf{x}_{\{l\}}$ or $X_{\{l\}}$</answer>
+<answer>$\mathbf{x}_l$ or $X_l$</answer>
+</answers>
+<explanation>Slide 5 of the first lecture ("Notation") clearly states: "Values associated with layer l: $\mathbf{x}^{[l]}$ or $X^{[l]}$". Parentheses are used for datapoints in a dataset, and curly braces for epochs/steps.</explanation>
+</problem>
+<problem>
+<question>The Perceptron Learning Algorithm is guaranteed to converge in finite time if and only if:</question>
+<answers>
+<answer correct="true">The data is linearly separable.</answer>
+<answer>The learning rate $\eta$ is sufficiently small.</answer>
+<answer>The number of features $n$ is less than the number of data points $m$.</answer>
+<answer>The initial weights $\theta^{\{0\}}$ are set to zero.</answer>
+</answers>
+<explanation>Slide 7 of the first lecture ("Perceptron Learning Algorithm") explicitly states: "Iff data is linearly separable $\implies$ converges in finite time".</explanation>
+</problem>
+<problem>
+<question>In the biological neuron model presented (Slide 4, First Lecture), which part is primarily responsible for collecting electrical signals from other neurons?</question>
+<answers>
+<answer correct="true">Dendrites</answer>
+<answer>Axon</answer>
+<answer>Nucleus</answer>
+<answer>Cell body</answer>
+</answers>
+<explanation>Slide 4 of the first lecture ("Information Flow Through Neurons") describes "Dendrites: Collect electrical signals".</explanation>
+</problem>
+<problem>
+<question>A Multi-Layer Perceptron (MLP) is often described as a series of dense layers. What is another common alias for an MLP, as mentioned on Slide 17 of the first lecture?</question>
+<answers>
+<answer correct="true">A feed-forward network</answer>
+<answer>A recurrent neural network (RNN)</answer>
+<answer>A convolutional neural network (CNN)</answer>
+<answer>A Boltzmann machine</answer>
+</answers>
+<explanation>Slide 17 of the first lecture ("Common MLP Aliases") lists "A series of dense layers" and "A feed-forward network" as common descriptions/aliases for an MLP.</explanation>
+</problem>
+<problem>
+<question>In supervised learning (Slide 18, First Lecture), the process of estimating model parameters $\theta$ from training data is called:</question>
+<answers>
+<answer correct="true">Learning</answer>
+<answer>Inference</answer>
+<answer>Validation</answer>
+<answer>Prediction</answer>
+</answers>
+<explanation>Slide 18 of the first lecture ("Supervised learning") defines: "Learning: Estimate parameters $\theta$ from training data $\{(\mathbf{x}^{(i)}, y^{(i)})\}_{i=0}^N$". Inference is making predictions on unseen inputs.</explanation>
+</problem>
+<problem>
+<question>When comparing Bayesian and Frequentist viewpoints in parameter estimation (Slide 21, First Lecture), the Maximum A Posteriori (MAP) estimate $\theta^*$ is the mode of which distribution?</question>
+<answers>
+<answer correct="true">The posterior distribution $p(\theta | D)$</answer>
+<answer>The likelihood function $p(D | \theta)$</answer>
+<answer>The prior distribution $p(\theta)$</answer>
+<answer>The evidence $p(D)$</answer>
+</answers>
+<explanation>Slide 21 of the first lecture ("High-Level Intuition") states: "Bayesian viewpoint: parameters $\theta$ are a random variable. Hence, estimate $\theta^*$ as the mode of the posterior distribution. This is called the MAP estimate." The formula shown is $\theta^* \in \text{argmax } p(\theta|D)$.</explanation>
+</problem>
+<problem>
+<question>What is the "Consistency" property of Maximum Likelihood Estimators (MLE), as described on Slide 30 of the first lecture?</question>
+<answers>
+<answer correct="true">As the number of training samples $N \to \infty$, the MLE converges to the true parameters.</answer>
+<answer>The MLE provides the lowest possible variance among all unbiased estimators.</answer>
+<answer>The MLE converges quickly as $N$ increases.</answer>
+<answer>The MLE is always unbiased, regardless of the sample size $N$.</answer>
+</answers>
+<explanation>Slide 30 of the first lecture ("Maximum Likelihood Estimators - Remarks") states: "Consistency: As the number of training samples $N \to \infty$, the MLE converges to the true parameters."</explanation>
+</problem>
+<problem>
+<question>In the intuitive explanation of backpropagation (Slides 9-11, Second Lecture), if the goal is to increase the output value of a neuron, and a weight $w_k$ connects to an activation $a_k$ that is very small (close to zero), how much influence will changing $w_k$ have on the output, according to this intuition?</question>
+<answers>
+<answer correct="true">Very little influence, as the effect is proportional to the activation $a_k$.</answer>
+<answer>Significant influence, as small activations are more sensitive to weight changes.</answer>
+<answer>The influence depends only on the magnitude of the weight $w_k$, not $a_k$.</answer>
+<answer>The influence will be negative, counteracting the desired increase.</answer>
+</answers>
+<explanation>The intuition (and the math shown on Slide 12 of the second lecture, $\frac{\partial L}{\partial w_1} \propto a_1$) suggests that the change in loss due to a weight is proportional to the activation connected through that weight. If $a_k$ is small, the impact of changing $w_k$ is also small.</explanation>
+</problem>
+<problem>
+<question>When backpropagating error to a hidden layer (Slide 15, Second Lecture), the error signal for a neuron in that hidden layer is computed by:</question>
+<answers>
+<answer correct="true">Summing the weighted error signals from all neurons in the subsequent layer that it connects to (its "parents" in the forward pass).</answer>
+<answer>Averaging the error signals from all neurons in the subsequent layer.</answer>
+<answer>Taking the maximum error signal from any neuron in the subsequent layer it connects to.</answer>
+<answer>Multiplying its own activation by the learning rate.</answer>
+</answers>
+<explanation>Slide 15 of the second lecture ("Backpropagation: Hidden Layer") shows with an arrow and text "Sum over the backpropagated values from each parent!". This means the error at a hidden neuron is an aggregation of how it contributed to the errors of the neurons it feeds into.</explanation>
+</problem>
+<problem>
+<question>According to the Universal Approximation Theorem (Slide 30, Second Lecture), while one hidden layer is theoretically enough to approximate any continuous function, what is often observed in practice regarding network depth?</question>
+<answers>
+<answer correct="true">Deeper networks (more layers) often perform better.</answer>
+<answer>Shallower networks (fewer layers) are almost always preferred for simplicity and speed.</answer>
+<answer>Network depth has no significant impact on performance if the width is sufficient.</answer>
+<answer>Optimal performance is always achieved with exactly two hidden layers.</answer>
+</answers>
+<explanation>Slide 30 of the second lecture ("Universal approximation theorem") states: "One layer is enough in theory. In practice deeper is better." Slide 42 also mentions "In practice, deeper networks work better."</explanation>
+</problem>
+<problem>
+<question>The "bump" function, which can be created by a small neural network with sigmoid activations (Slides 35-37, Second Lecture), is constructed by:</question>
+<answers>
+<answer correct="true">Subtracting one step-like function (approximated by a sigmoid) from another, slightly shifted step-like function.</answer>
+<answer>Multiplying two sigmoid functions together.</answer>
+<answer>Applying a sigmoid function to a quadratic input.</answer>
+<answer>Using a special "bump" activation function in the hidden layer.</answer>
+</answers>
+<explanation>Slide 37 of the second lecture shows how a "Bump function" is formed. The illustration implies two hidden neurons creating step-like outputs (s1, s2) and the output neuron combining them with weights (h1, h2 = -0.5, suggesting one adds and the other subtracts, or effectively a difference of sigmoids).</explanation>
+</problem>
+<problem>
+<question>One implication drawn from the "Randomization Test" experiments (Zhang et al., 2017), as discussed on Slide 51 of the second lecture, is that:</question>
+<answers>
+<answer correct="true">Neural networks don't necessarily learn in the same way humans do, given their ability to memorize random data.</answer>
+<answer>Explicit regularizers are the primary reason for good generalization in deep neural networks.</answer>
+<answer>Neural networks can only fit data if the labels are mostly correct.</answer>
+<answer>The capacity of neural networks is generally too low to fit complex datasets.</answer>
+</answers>
+<explanation>Slide 51 of the second lecture ("What does this mean?") states: "NNs don't really learn how humans learn." and "NNs easily overfit to random labels." This suggests a different learning mechanism than human-like understanding.</explanation>
+</problem>
+<problem>
+<question>In the "critical regime" of the double descent phenomenon (where Effective Model Complexity EMC $\approx n$, the number of samples), how does increasing model complexity typically affect test error (Slide 58, Second Lecture)?</question>
+<answers>
+<answer correct="true">Test error may decrease or increase.</answer>
+<answer>Test error will always decrease.</answer>
+<answer>Test error will always increase.</answer>
+<answer>Test error remains constant.</answer>
+</answers>
+<explanation>Slide 58 of the second lecture ("Hypotheses - Given n Samples for Training") states: "If EMCD,$\epsilon$(T) $\approx n$: we are in the critical regime – increasing T’s complexity will decrease or increase test error."</explanation>
+</problem>
+<problem>
+<question>The "Grokking" phenomenon (Power et al., 2022) observed in training neural networks on algorithmic tasks shows that:</question>
+<answers>
+<answer correct="true">Almost perfect generalization can happen much later in training, way after the model has perfectly fit (interpolated) the training data.</answer>
+<answer>Generalization only occurs if the model achieves zero training error very quickly.</answer>
+<answer>Smaller models are more likely to exhibit grokking than larger models.</answer>
+<answer>Grokking is primarily a result of using specific optimizers like AdamW.</answer>
+</answers>
+<explanation>Slide 56 of the second lecture ("Grokking") states: "Almost perfect generalization happens way after the interpolation threshold!" The plot shows the validation accuracy (generalization) improving significantly long after training accuracy has reached 100%.</explanation>
+</problem>
+<problem>
+<question>In the notation of the provided exercises (Page 1), for a function $g: \mathbb{R}^n \to \mathbb{R}^m$, what are the dimensions of its Jacobian matrix $J(g)_x$?</question>
+<answers>
+<answer correct="true">$m \times n$</answer>
+<answer>$n \times m$</answer>
+<answer>$n \times n$</answer>
+<answer>$m \times m$</answer>
+</answers>
+<explanation>Page 1 of the Pen &amp;Paper Solutions, Section 1 ("Multivariable chain rule"), states: "...The Jacobian $J(g)_x$ of a function $g: \mathbb{R}^n \to \mathbb{R}^m, g: \mathbf{x} \to \mathbf{y}$ is defined as a matrix of size $m \times n$..."</explanation>
+</problem>
+<problem>
+<question>In the backpropagation derivation for an MLP (Page 3 of Exercises), the error signal for layer $l$ is defined as $\delta^l := \frac{\partial R}{\partial z^l}$. How is $\delta^l$ expressed in terms of $\delta^{l+1}$ and the Jacobian $\frac{\partial z^{l+1}}{\partial z^l}$?</question>
+<answers>
+<answer correct="true">$(\delta^l)^T = (\delta^{l+1})^T \frac{\partial z^{l+1}}{\partial z^l}$ (or $\delta^l = (\frac{\partial z^{l+1}}{\partial z^l})^T \delta^{l+1}$ if $\delta$ are column vectors)</answer>
+<answer>$\delta^l = \delta^{l+1} \frac{\partial z^{l+1}}{\partial z^l}$</answer>
+<answer>$\delta^l = \frac{\partial z^{l+1}}{\partial z^l} \delta^{l+1}$</answer>
+<answer>$\delta^l = \delta^{l+1} + \frac{\partial z^{l+1}}{\partial z^l}$</answer>
+</answers>
+<explanation>Page 3 of the Pen &amp;Paper Solutions, Section 2a, shows the derivation: $\delta^l = \frac{\partial R}{\partial z^l} = \frac{\partial R}{\partial z^{l+1}} \frac{\partial z^{l+1}}{\partial z^l} = \delta^{l+1} \frac{\partial z^{l+1}}{\partial z^l}$. The dimensions and whether they are row/column vectors would determine precise transpose placement. The core idea is multiplication by the Jacobian. If $\delta$ are column vectors, the chain rule for gradients gives $\nabla_{z^l}R = (\frac{\partial z^{l+1}}{\partial z^l})^T \nabla_{z^{l+1}}R$, so $\delta^l = (\frac{\partial z^{l+1}}{\partial z^l})^T \delta^{l+1}$. The first option correctly reflects this relationship given typical Jacobian definitions and row/column vector conventions for gradients. The exercise itself seems to use $\delta^l$ as a row vector for $\frac{\partial R}{\partial z^l}$, in which case $(\delta^l) = (\delta^{l+1}) \frac{\partial z^{l+1}}{\partial z^l}$ is appropriate if $\delta^{l+1}$ is also a row vector. The core is the product with the Jacobian. The option chosen reflects the standard gradient vector propagation.</explanation>
+</problem>
+
+</problems>
