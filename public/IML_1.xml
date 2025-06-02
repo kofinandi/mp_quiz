@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<problems>
+  <problem>
+    <question>What is the primary goal of "Visual Analytics" as defined in the lecture?</question>
+    <answers>
+      <answer correct="true">Tight integration of visual and automatic data analysis methods for information exploration and scalable decision support.</answer>
+      <answer>To replace all automatic data analysis with purely visual methods for better human understanding.</answer>
+      <answer>To create aesthetically pleasing visualizations of data, regardless of analytical depth.</answer>
+      <answer>To automate the entire data analysis pipeline without human intervention, using visual outputs for final presentation only.</answer>
+    </answers>
+    <explanation>Slide 14 of "Lecture 01: Introduction" (and slide 15-16) defines Visual Analytics as the "Tight Integration of Visual and Automatic Data Analysis Methods for Information Exploration and Scalable Decision Support."</explanation>
+  </problem>
+  <problem>
+    <question>According to Ben Schneiderman's "Visual Information Seeking Mantra", what is the recommended approach to exploring data visually?</question>
+    <answers>
+      <answer correct="true">Overview first, zoom and filter, details on demand.</answer>
+      <answer>Details on demand, then zoom and filter, and finally an overview.</answer>
+      <answer>Zoom and filter immediately, then get an overview, and finally details on demand.</answer>
+      <answer>Focus on details on demand primarily, with overview and filtering as secondary steps.</answer>
+    </answers>
+    <explanation>Slide 17 of "Lecture 01: Introduction" presents the mantra as "Overview first, zoom and filter, details on demand."</explanation>
+  </problem>
+  <problem>
+    <question>In the context of Mixed-Initiative Systems, which scenario BEST exemplifies "Problem Ambiguity"?</question>
+    <answers>
+      <answer>Calculating the optimal route for a delivery truck with multiple stops.</answer>
+      <answer correct="true">Labeling images for a machine learning model where the categories are subjective and not clearly defined.</answer>
+      <answer>Detecting fraudulent credit card transactions based on historical data with clear fraud indicators.</answer>
+      <answer>Predicting stock prices based on a well-defined set of financial indicators.</answer>
+    </answers>
+    <explanation>Slide 23 of "Lecture 01: Introduction" gives Topic Modelling and Data Labelling as examples of problem ambiguity, where there is no computable ground-truth. Image labeling with subjective categories fits this description.</explanation>
+  </problem>
+  <problem>
+    <question>What is a key characteristic of "Co-Adaptive Analytics"?</question>
+    <answers>
+      <answer>The system adapts to the user, but the user does not adapt to the system.</answer>
+      <answer>The user adapts to the system, but the system's models remain static.</answer>
+      <answer correct="true">Users and systems adapt over time to converge to a common understanding and shared analysis process.</answer>
+      <answer>The system performs all analysis autonomously, providing final results to the user without iterative adaptation.</answer>
+    </answers>
+    <explanation>Slide 46 of "Lecture 01: Introduction" (and slide 5 of "Lecture 2") states that in Co-Adaptive Analytics, "Users and systems adapt over time to converge to a common understanding and shared analysis process to solve tasks."</explanation>
+  </problem>
+  <problem>
+    <question>According to Johanna Drucker, what is the distinction between "data" and "capta"?</question>
+    <answers>
+      <answer>Data is actively taken, while capta is assumed to be a "given".</answer>
+      <answer correct="true">Capta is "taken" actively, while data is assumed to be a "given" able to be recorded and observed.</answer>
+      <answer>Data refers to qualitative information, while capta refers to quantitative information.</answer>
+      <answer>There is no significant distinction; the terms are used interchangeably.</answer>
+    </answers>
+    <explanation>Slide 12 of "Lecture 2: Visual Interactive Data Analysis Pipeline" quotes Johanna Drucker: "Capta is 'taken' actively while data is assumed to be a 'given' able to be recorded and observed."</explanation>
+  </problem>
+
+  <problem>
+    <question>What is a primary concern when dealing with data collection, as highlighted in the "Notes on Data Collection"?</question>
+    <answers>
+      <answer>Always collect the largest dataset possible, regardless of time or cost.</answer>
+      <answer>Prioritize speed of collection over data quality or completeness.</answer>
+      <answer correct="true">Ensuring compliance with data protection and privacy regulations, and obtaining informed consent if collecting data from people.</answer>
+      <answer>Avoiding encryption to ensure easy access to the data for analysis.</answer>
+    </answers>
+    <explanation>Slide 31 of "Lecture 2: Visual Interactive Data Analysis Pipeline" emphasizes several points, including making sure you comply with data protection and privacy regulations, and if you collect data from people, you must have their informed consent.</explanation>
+  </problem>
+  <problem>
+    <question>Which data cleaning technique involves dividing the range of data into N intervals and then, for example, replacing all values in an interval with the mean of that interval?</question>
+    <answers>
+      <answer>Normalization</answer>
+      <answer correct="true">Binning</answer>
+      <answer>Outlier Detection using Clustering</answer>
+      <answer>Data Augmentation</answer>
+    </answers>
+    <explanation>Slide 44 of "Lecture 2: Visual Interactive Data Analysis Pipeline" describes Binning as a local smoothing method that allows for noise removal through aggregation, such as dividing the range into N intervals.</explanation>
+  </problem>
+  <problem>
+    <question>What is the "Lie Factor" in the context of designing visualizations?</question>
+    <answers>
+      <answer>The number of lies a presenter tells during a data presentation.</answer>
+      <answer>A measure of how much a visualization deviates from common aesthetic principles.</answer>
+      <answer correct="true">(Size of effect in graphic) / (Size of effect in data)</answer>
+      <answer>The complexity of the visualization, where a higher factor means it's harder to understand.</answer>
+    </answers>
+    <explanation>Slide 93 of "Lecture 3: Human Perception &amp;Visual Design Primitives" defines the Lie Factor as (Size of effect in graphic)/(Size of effect in data).</explanation>
+  </problem>
+  <problem>
+    <question>Which Gestalt Law describes the tendency for elements that are physically connected to be perceived as a group?</question>
+    <answers>
+      <answer>Law of Proximity</answer>
+      <answer>Law of Similarity</answer>
+      <answer correct="true">Law of Connectedness</answer>
+      <answer>Law of Closure</answer>
+    </answers>
+    <explanation>Slide 55 of "Lecture 3: Human Perception &amp;Visual Design Primitives" explains that the Law of Connectedness states that connected objects are perceptually grouped and can be more powerful than proximity, color, size, or shape.</explanation>
+  </problem>
+  <problem>
+    <question>What is a primary challenge associated with the "Curse of Dimensionality" in high-dimensional data?</question>
+    <answers>
+      <answer>Data becomes too simple to analyze effectively.</answer>
+      <answer>Distance and similarity measures become more reliable and easier to interpret.</answer>
+      <answer correct="true">The amount of data needed to generalize accurately grows exponentially, and data becomes sparse.</answer>
+      <answer>Visualizing high-dimensional data becomes trivial with standard 2D plots.</answer>
+    </answers>
+    <explanation>Slide 14 of "Lecture 4: High-Dimensional Data" explains that as the number of dimensions grows, the amount of data needed to generalize accurately grows exponentially, leading to data sparsity.</explanation>
+  </problem>
+  <problem>
+    <question>Which projection technique is known for its ability to preserve local neighborhood structures but may not always preserve global distances, and is sensitive to hyperparameters like "perplexity"?</question>
+    <answers>
+      <answer>Principal Component Analysis (PCA)</answer>
+      <answer>Multi-Dimensional Scaling (MDS)</answer>
+      <answer correct="true">t-distributed Stochastic Neighborhood Embedding (t-SNE)</answer>
+      <answer>Uniform Manifold Approximation and Projection (UMAP)</answer>
+    </answers>
+    <explanation>Slides 55 and 56 of "Lecture 4: High-Dimensional Data" describe t-SNE as a non-linear algorithm that preserves neighborhood structures well but not always distances, and is sensitive to hyperparameters like perplexity.</explanation>
+  </problem>
+  <problem>
+    <question>In Dense-Pixel Displays, how are attribute values typically represented?</question>
+    <answers>
+      <answer>By the length of bars in a subwindow.</answer>
+      <answer>By the position of points on a 2D plane.</answer>
+      <answer correct="true">Each attribute value is represented by one colored pixel, with value ranges mapped to a fixed color map.</answer>
+      <answer>By the segments of a polygonal line intersecting parallel axes.</answer>
+    </answers>
+    <explanation>Slide 63 of "Lecture 4: High-Dimensional Data" states that in Dense-Pixel Displays, "Each attribute value is represented by one colored pixel" and "The value ranges of the attributes are mapped to a fixed color map."</explanation>
+  </problem>
+  <problem>
+    <question>What type of visual encoding mapping is exemplified by Chernoff Faces, where multiple data attributes are mapped to different features of a face (e.g., eye size, mouth curvature)?</question>
+    <answers>
+      <answer>Many-To-One Mapping</answer>
+      <answer correct="true">One-To-One Mapping</answer>
+      <answer>One-To-Many Mapping</answer>
+      <answer>Structure-Driven Mapping</answer>
+    </answers>
+    <explanation>Slide 74 of "Lecture 4: High-Dimensional Data" describes Chernoff Faces as an example of One-To-One Mapping, where each data attribute is mapped to a different visual variable (facial feature).</explanation>
+  </problem>
+  <problem>
+    <question>What is a key consideration from the lecture regarding the interpretation of visual patterns and correlations in data visualization for interactive machine learning?</question>
+    <answers>
+      <answer>Visual patterns always directly correspond to true data patterns.</answer>
+      <answer>Correlations observed in visualizations always imply causation.</answer>
+      <answer correct="true">Visual Patterns do not always equal Data Patterns, and Correlations do not equal Causality; it's important to be careful of visualization artifacts and communicate uncertainties.</answer>
+      <answer>The lack of patterns in a visualization definitively means there are no patterns in the underlying data.</answer>
+    </answers>
+    <explanation>Slide 85 of "Lecture 4: High-Dimensional Data" highlights considerations such as "Visual Patterns =! Data Patterns" and "Correlations =! Causality", urging caution with interpretation and communication of uncertainties.</explanation>
+  </problem>
+  <problem>
+    <question>What does the "Co-Adaptive Analytics" framework (Sperrle et al., 2020) suggest about the roles of users and systems in the analytical process?</question>
+    <answers>
+      <answer>The system teaches the user, but the user primarily learns passively.</answer>
+      <answer>The user teaches the system, and the system's learning is a one-time process.</answer>
+      <answer correct="true">Both users and systems engage in learning and teaching, adapting to each other to close knowledge gaps and achieve goals.</answer>
+      <answer>The system extracts information from users, but users do not generate knowledge from system information.</answer>
+    </answers>
+    <explanation>Slide 5 of "Lecture 2: Visual Interactive Data Analysis Pipeline" (and slide 47 of "Lecture 1") illustrates Co-Adaptive Analytics with four key processes: User Teaching, System Learning, User Learning, and System Teaching, indicating a bidirectional adaptation and knowledge exchange.</explanation>
+  </problem>
+  <problem>
+    <question>What is the primary purpose of "Normalization" in data pre-processing?</question>
+    <answers>
+      <answer>To remove all noise and outliers from the dataset.</answer>
+      <answer>To increase the number of dimensions in the dataset for more detailed analysis.</answer>
+      <answer correct="true">To scale features to a similar range, which can help with model convergence and prevent features with larger values from dominating.</answer>
+      <answer>To convert all data types to a nominal format for easier categorical analysis.</answer>
+    </answers>
+    <explanation>Slide 49 of "Lecture 2: Visual Interactive Data Analysis Pipeline" states that normalization is used because "Several features can have different scales or different orders of magnitude within the same feature" and "It helps the model convergence."</explanation>
+  </problem>
+  <problem>
+    <question>When using Principal Component Analysis (PCA) for dimensionality reduction, what do the principal components represent?</question>
+    <answers>
+      <answer>Randomly selected subsets of the original features.</answer>
+      <answer>The features that have the highest individual variance, considered independently.</answer>
+      <answer correct="true">Linear combinations of the original features that capture the maximum variance in the data, ordered by the amount of variance they explain.</answer>
+      <answer>Non-linear transformations of the data that best preserve local neighborhood structures.</answer>
+    </answers>
+    <explanation>Slide 55 of "Lecture 2: Visual Interactive Data Analysis Pipeline" (and slide 50 of "Lecture 4") explains that PCA finds data representations (principal components) that are linear combinations of original patterns and retain maximum nonredundant and uncorrelated information, ordered by variance explained.</explanation>
+  </problem>
+  <problem>
+    <question>What is "Change Blindness" in the context of visual perception?</question>
+    <answers>
+      <answer>The inability to perceive any changes in a visual scene, even when actively looking for them.</answer>
+      <answer>A condition where individuals are unable to distinguish between different colors.</answer>
+      <answer correct="true">The phenomenon where individuals may be unable to see significant changes in a scene if their focus is interrupted or due to inappropriate attentional guidance.</answer>
+      <answer>The tendency to see changes that have not actually occurred in a visual scene.</answer>
+    </answers>
+    <explanation>Slide 15 of "Lecture 3: Human Perception &amp;Visual Design Primitives" defines Change Blindness as the inability to see significant changes that occur in a scene if our focus gets interrupted or due to inappropriate attentional guidance.</explanation>
+  </problem>
+  <problem>
+    <question>According to Stevens' Power Law, how do humans typically perceive length compared to area or volume when these are visually represented?</question>
+    <answers>
+      <answer>Humans tend to overestimate length and underestimate area and volume.</answer>
+      <answer>Humans tend to underestimate length and overestimate area and volume.</answer>
+      <answer correct="true">Humans tend to estimate lengths relatively correctly but underestimate areas and volumes, with the underestimation becoming more pronounced as area/volume grows.</answer>
+      <answer>Humans perceive length, area, and volume with equal accuracy, regardless of their magnitude.</answer>
+    </answers>
+    <explanation>Slide 46 of "Lecture 3: Human Perception &amp;Visual Design Primitives" (and slide 45) illustrates that people tend to correctly estimate lengths but underestimate areas and volumes, and this tendency gets worse as area or volume grow. This is related to the exponent N in S = I^N being close to 1 for length, less than1 for area, and even smaller for volume.</explanation>
+  </problem>
+  <problem>
+    <question>In the context of parallel coordinates, what is a significant challenge related to the "ordering of dimensions"?</question>
+    <answers>
+      <answer>The ordering of dimensions primarily affects the visibility of positive correlations, while negative correlations remain unaffected.</answer>
+      <answer>There is always a single, computationally easy-to-find optimal ordering for any given dataset and task.</answer>
+      <answer correct="true">The perceived patterns and the ability to detect clusters or correlations can depend heavily on the order in which dimensions are arranged, and finding an optimal order is NP-complete.</answer>
+      <answer>Ordering of dimensions has minimal impact on the interpretability of parallel coordinate plots.</answer>
+    </answers>
+    <explanation>Slide 28 and 31 of "Lecture 4: High-Dimensional Data" highlight that a perceived pattern depends primarily on the ordering of dimensions, and the problem of finding optimal ordering is NP-complete. Different orderings can reveal or obscure different patterns (slide 31).</explanation>
+  </problem>
+  <problem>
+    <question>Which of the following best describes "Subspace Clustering"?</question>
+    <answers>
+      <answer>A technique that clusters data points only in the first two principal components.</answer>
+      <answer>Clustering algorithms that are applied after projecting the data into a lower-dimensional space using t-SNE.</answer>
+      <answer correct="true">Algorithms that search for clusters within different subsets of dimensions (subspaces) rather than in the entire data space.</answer>
+      <answer>A method for dividing a single cluster into multiple smaller, more manageable clusters.</answer>
+    </answers>
+    <explanation>Slide 15 of "Lecture 4: High-Dimensional Data" defines Subspace clustering algorithms as those that "search for clusters not in the whole data space, but within different subsets of dimensions (called subspaces)."</explanation>
+  </problem>
+  <problem>
+    <question>What is the main idea behind the "Recursive Pattern Technique" for visualizing dense pixel displays?</question>
+    <answers>
+      <answer>To arrange pixels randomly to avoid any perceived patterns.</answer>
+      <answer>To display each dimension in a separate, non-recursive window.</answer>
+      <answer correct="true">A recursive generalization of line- and column-oriented arrangements, where patterns of a lower recursion level are drawn repeatedly to form the next level, often using space-filling curves.</answer>
+      <answer>To use recursion to find the optimal color map for pixel display.</answer>
+    </answers>
+    <explanation>Slide 66 of "Lecture 4: High-Dimensional Data" explains that the Recursive Pattern Technique is a "Recursive generalization of line- and column-oriented arrangements" and describes the algorithm for drawing patterns of recursion level (i-1) to form level i.</explanation>
+  </problem>
+  <problem>
+    <question>Which of the following is NOT a typical analysis task supported by scatterplots, as mentioned in the lecture?</question>
+    <answers>
+      <answer>Identify Objects</answer>
+      <answer>Characterize Distribution</answer>
+      <answer>Explore Neighborhoods</answer>
+      <answer correct="true">Determine the exact sequence of events in temporal data</answer>
+    </answers>
+    <explanation>Slide 21 of "Lecture 4: High-Dimensional Data" lists Object-centric Tasks (Identify, Locate, Verify, Compare Objects), Browsing Tasks (Explore Neighborhoods, Search for Known Motif, Explore Data), and Aggregate-level Tasks (Characterize Distribution, Identify Anomalies, etc.) for scatterplots. Determining exact temporal sequences is not a primary strength of standard scatterplots, which usually show relationships between two (or more via encoding) static variables.</explanation>
+  </problem>
+  <problem>
+    <question>What is the fundamental difference between "data-driven" and "structure-driven" glyph layouts?</question>
+    <answers>
+      <answer>Data-driven layouts use simple glyphs, while structure-driven layouts use complex glyphs.</answer>
+      <answer>Data-driven layouts are always 2D, while structure-driven layouts can be 3D.</answer>
+      <answer correct="true">In data-driven layouts, the position of a glyph depends on its data values, whereas in structure-driven layouts, data contains an implicit or explicit structural attribute (like ordering or hierarchy) that dictates glyph placement.</answer>
+      <answer>Data-driven layouts are static, while structure-driven layouts are always interactive.</answer>
+    </answers>
+    <explanation>Slides 77 and 78 of "Lecture 4: High-Dimensional Data" explain that for data-driven layouts, the "Position of a data glyph depends on its data values." For structure-driven layouts, "Data contains an implicit or explicit structural attribute" like ordering, hierarchies, or networks, which influences layout.</explanation>
+  </problem>
+  <problem>
+    <question>What is the primary characteristic of an "Ordinal" data class?</question>
+    <answers>
+      <answer>It represents labels or categories with no inherent order.</answer>
+      <answer correct="true">It represents categories that have a meaningful order, but the intervals between categories are not necessarily equal or quantifiable.</answer>
+      <answer>The location of zero is arbitrary, and only differences (intervals) can be meaningfully compared.</answer>
+      <answer>It has a fixed zero point, allowing for meaningful ratios and all arithmetic operations.</answer>
+    </answers>
+    <explanation>Slide 18 of "Lecture 2: Visual Interactive Data Analysis Pipeline" defines Ordinal data as ordered, giving "Quality of food: Grade A, AA, AAA" as an example. It allows ordering operations.</explanation>
+  </problem>
+  <problem>
+    <question>Which of these is NOT a common data exchange format mentioned in the lecture?</question>
+    <answers>
+      <answer>XML (eXtensible Markup Language)</answer>
+      <answer>CSV (Comma-Separated Value)</answer>
+      <answer>JSON (JavaScript Object Notation)</answer>
+      <answer correct="true">SQL (Structured Query Language)</answer>
+    </answers>
+    <explanation>Slide 24 of "Lecture 2: Visual Interactive Data Analysis Pipeline" lists XML, CSV, and JSON as common data exchange formats. SQL is a language for managing and querying databases, not primarily an exchange format in the same vein.</explanation>
+  </problem>
+  <problem>
+    <question>What does "Data Augmentation" primarily aim to address in machine learning?</question>
+    <answers>
+      <answer>Reducing the number of features in a dataset to simplify models.</answer>
+      <answer>Cleaning noisy data by smoothing out irregularities.</answer>
+      <answer correct="true">Increasing the size or diversity of a training dataset, often when the original dataset is small, to help prevent overfitting and improve model generalization.</answer>
+      <answer>Ensuring all data is stored in a single, unified format.</answer>
+    </answers>
+    <explanation>Slide 56 of "Lecture 2: Visual Interactive Data Analysis Pipeline" states, "With a small dataset machine learning models fall quickly in overfitting and do not learn meaningful features." Data augmentation involves adding datapoints or new dimensions to address this.</explanation>
+  </problem>
+  <problem>
+    <question>What is the "Afterimage Effect" in visual perception?</question>
+    <answers>
+      <answer>The tendency to miss large changes in a visual scene when attention is diverted.</answer>
+      <answer correct="true">An optical illusion where an image continues to appear in one's vision after the exposure to the original image has ceased, often in complementary colors.</answer>
+      <answer>The inability to distinguish between certain colors, such as red and green.</answer>
+      <answer>The phenomenon where objects in the foreground appear more prominent than those in the background.</answer>
+    </answers>
+    <explanation>Slides 63 and 64 of "Lecture 3: Human Perception &amp; Visual Design Primitives" demonstrate the afterimage effect, where staring at a colored image and then looking at a neutral background causes a negative afterimage to appear.</explanation>
+  </problem>
+  <problem>
+    <question>Which type of color scheme is generally recommended by ColorBrewer for representing sequential data where values range from low to high?</question>
+    <answers>
+      <answer>Qualitative schemes with distinct, unrelated hues.</answer>
+      <answer correct="true">Sequential schemes with a progression of lightness or saturation, often within a single hue or related hues.</answer>
+      <answer>Diverging schemes that emphasize a critical midpoint with two contrasting color progressions.</answer>
+      <answer>Rainbow color schemes for maximum differentiation.</answer>
+    </answers>
+    <explanation>Slide 82 of "Lecture 3: Human Perception &amp; Visual Design Primitives" shows ColorBrewer. Sequential data, by its nature, implies an order from low to high, for which sequential color schemes (e.g., light-to-dark of a single hue) are appropriate.</explanation>
+  </problem>
+  <problem>
+    <question>In the context of designing visualizations for high-dimensional data, what is a "glyph"?</question>
+    <answers>
+      <answer>A type of projection technique that reduces data to two dimensions.</answer>
+      <answer>A statistical summary of a single dimension in the dataset.</answer>
+      <answer correct="true">A data-driven visual entity that uses different visual channels (e.g., shape, size, color of its parts) to encode multiple attribute dimensions of a single data record.</answer>
+      <answer>A method for arranging pixels in a space-filling manner to show overall data distribution.</answer>
+    </answers>
+    <explanation>Slide 71 of "Lecture 4: High-Dimensional Data" defines data glyphs as "data-driven visual entities, which make use of different visual channels to encode multiple attribute dimensions."</explanation>
+  </problem>
+  <problem>
+    <question>What is a key characteristic of "Sankey Diagrams" when used as a variant of parallel coordinates?</question>
+    <answers>
+      <answer>They primarily visualize hierarchical data structures using nested rectangles.</answer>
+      <answer>They represent each data point as a star-shaped glyph.</answer>
+      <answer correct="true">They are well-suited for visualizing categorical data and the flow or quantity between categories across multiple stages or dimensions, with the width of the bands representing magnitude.</answer>
+      <answer>They project high-dimensional data onto a 2D plane, focusing on preserving global distances.</answer>
+    </answers>
+    <explanation>Slide 44 of "Lecture 4: High-Dimensional Data" shows an example of Sankey Diagrams being used for categorical data, visually similar to parallel sets which are a variant of parallel coordinates for categorical data. Sankey diagrams emphasize flow and magnitude between categories.</explanation>
+  </problem>
+  <problem>
+    <question>What is the main goal of Uniform Manifold Approximation and Projection (UMAP)?</question>
+    <answers>
+      <answer>To find linear combinations of features that explain the most variance.</answer>
+      <answer correct="true">To reconstruct the structure of high-dimensional data in a lower-dimensional space by constructing a graph and optimizing its low-dimensional representation to be structurally similar.</answer>
+      <answer>To arrange all data points along parallel axes, connecting values for each record.</answer>
+      <answer>To represent each data record as a single colored pixel in a dense display.</answer>
+    </answers>
+    <explanation>Slide 59 of "Lecture 4: High-Dimensional Data" states that the aim of UMAP is to "reconstruct the Structure of the High-Dimensional Data" through high-dimensional graph construction and optimizing a low-dimensional graph to be structurally similar.</explanation>
+  </problem>
+  <problem>
+    <question>What is "Selective Attention" as described in the lecture on human perception?</question>
+    <answers>
+      <answer>The ability to perfectly divide attention among multiple tasks simultaneously.</answer>
+      <answer>A heightened state of awareness where all sensory input is processed equally.</answer>
+      <answer correct="true">The phenomenon that attention is a limited resource, and humans are not very good at splitting it, often switching between tasks rather than doing them simultaneously.</answer>
+      <answer>The process by which the brain automatically selects the most important information to remember long-term.</answer>
+    </answers>
+    <explanation>Slide 17 of "Lecture 3: Human Perception &amp; Visual Design Primitives" describes selective attention, noting that "Attention is a limited resource," "Humans are not very good at splitting their attention," and "Usually, we switch between tasks..."</explanation>
+  </problem>
+  <problem>
+    <question>Which of the following visual channels is generally considered most effective for representing quantitative (magnitude) data accurately, according to visual channel rankings?</question>
+    <answers>
+      <answer>Color hue</answer>
+      <answer>Shape</answer>
+      <answer correct="true">Position on a common scale</answer>
+      <answer>Texture</answer>
+    </answers>
+    <explanation>Slide 42 of "Lecture 3: Human Perception &amp; Visual Design Primitives" (and slide 4 of "Lecture 4") shows "Position on common scale" at the top of the effectiveness ranking for magnitude channels.</explanation>
+  </problem>
+  <problem>
+    <question>In the "Human-Centered Machine Learning" framework, what is one of the key activities in the "How do you do it?" phase?</question>
+    <answers>
+      <answer>Focus solely on quantitative data and statistical significance.</answer>
+      <answer>Avoid user participation to maintain objectivity.</answer>
+      <answer correct="true">Collect Qualitative Data about Things that don’t work for a Problem, and Prototype and Iterate Solutions.</answer>
+      <answer>Implement the final solution directly without iterative prototyping.</answer>
+    </answers>
+    <explanation>Slide 4 of "Lecture 2: Visual Interactive Data Analysis Pipeline" (and slide 41 of "Lecture 1") lists "Collect Qualitative Data about Things that don’t work for a Problem" and "Prototype and Iterate Solutions" as part of "How do you do it?" for Human-Centered Machine Learning.</explanation>
+  </problem>
+  <problem>
+    <question>What is the primary risk of using "Truncated Axis" in a bar chart visualization?</question>
+    <answers>
+      <answer>It makes the chart harder to read for colorblind individuals.</answer>
+      <answer>It can only be used for nominal data, not quantitative data.</answer>
+      <answer correct="true">It can misrepresent the magnitude of differences between bars, potentially exaggerating small differences or minimizing large ones, thus violating the principle of proportionality.</answer>
+      <answer>It often leads to overplotting, making individual bars difficult to distinguish.</answer>
+    </answers>
+    <explanation>Slide 106 of "Lecture 3: Human Perception &amp; Visual Design Primitives" lists "Truncated Axis" as a common issue leading to misinformed visualizations. Bar charts rely on length to encode value, and truncating the axis (not starting from zero) distorts this visual comparison.</explanation>
+  </problem>
+  <problem>
+    <question>What is a key characteristic of "Semi-Structured Data" as defined in the lecture?</question>
+    <answers>
+      <answer>It has no predefined structure and requires computation to elicit any organization.</answer>
+      <answer>It follows traditional relational formats with rigid table-like structures.</answer>
+      <answer correct="true">It is organized data but with flexible schemas, allowing for variations in structure.</answer>
+      <answer>It consists purely of numerical values with no textual or categorical information.</answer>
+    </answers>
+    <explanation>Slide 23 of "Lecture 2: Visual Interactive Data Analysis Pipeline" defines Semi-Structured Data as "Organized data but with flexible schemas" and gives ontologies and Wikis as examples.</explanation>
+  </problem>
+  <problem>
+    <question>Which of these is an example of "System Teaching" in the Co-Adaptive Analytics framework?</question>
+    <answers>
+      <answer>A user generating knowledge from information provided by the system.</answer>
+      <answer>The system extracting information or preferences from the user's interactions.</answer>
+      <answer correct="true">A user explicitly instructing the system about their preferences, goals, or providing labels for data.</answer>
+      <answer>The system supporting a user in closing a knowledge gap by providing explanations.</answer>
+    </answers>
+    <explanation>Slide 5 of "Lecture 2: Visual Interactive Data Analysis Pipeline" defines System Teaching as "Users teach systems their preferences and goals." This involves the user actively providing input to guide the system's learning.</explanation>
+  </problem>
+  <problem>
+    <question>The "Datasaurus" dataset (and Anscombe's Quartet) primarily illustrates which important concept in data visualization?</question>
+    <answers>
+      <answer>That all datasets with similar summary statistics will look identical when visualized.</answer>
+      <answer>The importance of using complex visualizations for simple datasets.</answer>
+      <answer correct="true">That datasets can have very similar or identical summary statistics but vastly different visual distributions, emphasizing the need to visualize data.</answer>
+      <answer>That summary statistics are generally more reliable than visual inspection for understanding data.</answer>
+    </answers>
+    <explanation>Slide 73 and 74 of "Lecture 2: Visual Interactive Data Analysis Pipeline" show Anscombe's Quartet and the Datasaurus, which are famous examples demonstrating that different datasets can share very similar statistical properties (mean, variance, correlation) yet have strikingly different graphical representations.</explanation>
+  </problem>
+  <problem>
+    <question>What is the "Pre-Attentive Processing" phase in human visual perception?</question>
+    <answers>
+      <answer>A slow, deliberate cognitive process requiring conscious effort to identify visual features.</answer>
+      <answer correct="true">The rapid, unconscious recognition of certain visual variations (like color, basic shape, orientation) with little conscious effort, typically occurring in under 200-250 ms.</answer>
+      <answer>The stage where visual information is stored in long-term memory.</answer>
+      <answer>The process of actively searching for a specific object within a complex visual scene.</answer>
+    </answers>
+    <explanation>Slide 22 of "Lecture 3: Human Perception &amp; Visual Design Primitives" defines Pre-Attentive Processing as immediately recognizing variation with little conscious effort (less than200-250 ms), involving object recognition and feature distribution analysis.</explanation>
+  </problem>
+  <problem>
+    <question>When visualizing data using color, what is a crucial consideration regarding colorblindness?</question>
+    <answers>
+      <answer>Colorblindness is extremely rare and generally does not need to be considered in visualization design.</answer>
+      <answer>Using a rainbow color map is the best way to ensure accessibility for colorblind individuals.</answer>
+      <answer correct="true">A significant portion of the population (especially males for red-green colorblindness) has some form of color vision deficiency, so visualizations should be designed to be distinguishable by them, for example by varying luminance or using colorblind-safe palettes.</answer>
+      <answer>Colorblind individuals perceive all colors as shades of gray, so hue is never a useful channel for them.</answer>
+    </answers>
+    <explanation>Slides 65-67 of "Lecture 3: Human Perception &amp; Visual Design Primitives" discuss colorblindness, noting that 10% of males are red-green colorblind and showing different types. Slide 89 emphasizes the need to design for colorblindness or low-vision depending on users.</explanation>
+  </problem>
+  <problem>
+    <question>What is a major drawback of using 3D pie charts for data visualization?</question>
+    <answers>
+      <answer>They are excellent for accurately comparing the proportions of many categories.</answer>
+      <answer>The 3D effect enhances the viewer's ability to judge angles and areas precisely.</answer>
+      <answer correct="true">The 3D perspective distorts the perception of segment sizes (angles and areas), making it difficult to accurately compare proportions.</answer>
+      <answer>They are generally more space-efficient than 2D pie charts or bar charts.</answer>
+    </answers>
+    <explanation>Slide 113 of "Lecture 3: Human Perception &amp; Visual Design Primitives" states, "3-dimensional representation can make it difficult to directly compare sizes of objects" and questions if there's ever a need for a 3D pie-chart, implying its general ineffectiveness for accurate comparison.</explanation>
+  </problem>
+  <problem>
+    <question>In scatterplot design, what does "Point Grouping (e.g., binning)" refer to?</question>
+    <answers>
+      <answer>Changing the color or shape of individual points based on their data values.</answer>
+      <answer correct="true">Aggregating multiple data points into a single visual mark or summary representation, often to handle overplotting or reveal density.</answer>
+      <answer>Animating the movement of points over time to show trends.</answer>
+      <answer>Adding labels or annotations to specific points of interest.</answer>
+    </answers>
+    <explanation>Slide 19 of "Lecture 4: High-Dimensional Data" shows "Point grouping (e.g., binning)" as a design decision for scatterplots, with visual examples suggesting aggregation of points.</explanation>
+  </problem>
+  <problem>
+    <question>What is a primary advantage of using "Parallel Coordinates" for visualizing high-dimensional data?</question>
+    <answers>
+      <answer>They are immune to overplotting, regardless of dataset size.</answer>
+      <answer>The ordering of dimensions has no impact on the perceived patterns.</answer>
+      <answer correct="true">They can represent many dimensions simultaneously, with each data item as a polygonal line, allowing for the visual detection of correlations, clusters, and outliers across dimensions.</answer>
+      <answer>They are best suited for visualizing categorical data with no quantitative attributes.</answer>
+    </answers>
+    <explanation>Slide 27 of "Lecture 4: High-Dimensional Data" describes parallel coordinates, where n dimensions are represented by n parallel axes and each data item is a polygonal line. This allows for comparison across many dimensions.</explanation>
+  </problem>
+</problems>
