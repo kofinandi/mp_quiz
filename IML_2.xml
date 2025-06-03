@@ -1,0 +1,623 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<problems>
+  <problem>
+    <question>How is temporal data primarily characterized?</question>
+    <answers>
+      <answer correct="true">By data elements being a function of time.</answer>
+      <answer>By data elements being independent of time.</answer>
+      <answer>By static data points that do not change.</answer>
+      <answer>By relationships between non-temporal entities.</answer>
+    </answers>
+    <explanation>Temporal data is defined by its dependency on time, where data elements or their values change or are recorded as a function of time (d = f(t)).</explanation>
+  </problem>
+  <problem>
+    <question>In the conceptual structure of time, what is a "Granule"?</question>
+    <answers>
+      <answer correct="true">A set of temporal values perceived as a non-decomposable temporal entity.</answer>
+      <answer>Sets of non-overlapping temporal entities, forming a higher level of time measurement.</answer>
+      <answer>The smallest theoretically indivisible unit of time, such as a Chronon.</answer>
+      <answer>A mapping that defines regular or irregular relationships between different time units.</answer>
+    </answers>
+    <explanation>A granule is a fundamental concept in temporal data, representing a unit of time that is considered non-decomposable for a given context or perception.</explanation>
+  </problem>
+  <problem>
+    <question>What distinguishes Dynamic Temporal Data from Static Temporal Data?</question>
+    <answers>
+      <answer correct="true">Dynamic temporal data continuously updates its view, reflecting changes over external time.</answer>
+      <answer>Static temporal data has no time component associated with it.</answer>
+      <answer>Dynamic temporal data only shows a historic, unchanging view of past events.</answer>
+      <answer>Static temporal data is always updated in real-time, whereas dynamic data is not.</answer>
+    </answers>
+    <explanation>Dynamic temporal data changes its representation as new data arrives or as external time progresses, providing an evolving view. Static temporal data represents a fixed historical state.</explanation>
+  </problem>
+  <problem>
+    <question>Which time series analysis task addresses the question: "When does a data element exist in time?"</question>
+    <answers>
+      <answer correct="true">Localization</answer>
+      <answer>Existence</answer>
+      <answer>Temporal Interval</answer>
+      <answer>Rate of Change</answer>
+    </answers>
+    <explanation>Localization in time series analysis is concerned with identifying the specific point(s) or period(s) in time when a data element or event occurs.</explanation>
+  </problem>
+  <problem>
+    <question>What is a common issue that Line Charts can quickly suffer from, especially when visualizing multiple time series?</question>
+    <answers>
+      <answer correct="true">Overplotting</answer>
+      <answer>Inability to show trends over time</answer>
+      <answer>Difficulty in representing discrete time points</answer>
+      <answer>Being limited to only univariate data visualization</answer>
+    </answers>
+    <explanation>Overplotting occurs when multiple lines in a chart overlap extensively, making it difficult to distinguish individual series and discern patterns.</explanation>
+  </problem>
+  <problem>
+    <question>What is the main goal of Two-Tone Pseudo Coloring for visualizing one-dimensional data like temperature over time?</question>
+    <answers>
+      <answer correct="true">To visualize details as precisely as possible in overview displays by mapping each scalar value to two discrete color values.</answer>
+      <answer>To reduce the number of colors used, simplifying the visualization.</answer>
+      <answer>To show only the average value of data points, abstracting away details.</answer>
+      <answer>To create a 3D effect for time series data to enhance depth perception.</answer>
+    </answers>
+    <explanation>Two-Tone Pseudo Coloring aims to enhance detail perception in dense visualizations by using two discrete color attributes (e.g., one for coarse and one for fine detail) for each scalar value.</explanation>
+  </problem>
+  <problem>
+    <question>What are Sparklines in the context of data visualization?</question>
+    <answers>
+      <answer correct="true">Small, intense, word-sized graphics embedded in a context of words, numbers, or images.</answer>
+      <answer>Large, interactive charts designed for in-depth exploratory data analysis.</answer>
+      <answer>Animated visualizations that show data changing dynamically over time.</answer>
+      <answer>3D visualizations used for complex hierarchical data.</answer>
+    </answers>
+    <explanation>Sparklines are compact, data-intense, and typically simple graphics, often line charts, designed to be embedded directly in text or tables to provide a quick overview of a trend.</explanation>
+  </problem>
+  <problem>
+    <question>In a ThemeRiver visualization, what does the horizontal distance between two points typically represent?</question>
+    <answers>
+      <answer correct="true">Time interval.</answer>
+      <answer>The collective strength or magnitude of selected themes.</answer>
+      <answer>An individual theme or topic.</answer>
+      <answer>The number of documents or data points at that time.</answer>
+    </answers>
+    <explanation>ThemeRivers map the evolution of themes over time, where the horizontal axis represents time, and thus the distance along it represents a time interval.</explanation>
+  </problem>
+  <problem>
+    <question>What is the primary optimization goal for a Streamgraph layout, which is a variation of stacked area charts?</question>
+    <answers>
+      <answer correct="true">To minimize the weighted sum of squares of the slopes of all layers, aiming for smoother transitions.</answer>
+      <answer>To make the graph perfectly symmetric around a central baseline.</answer>
+      <answer>To ensure all layers are sorted strictly by their first appearance (onset time).</answer>
+      <answer>To maximize the total area of the graph to fill the display space.</answer>
+    </answers>
+    <explanation>Streamgraphs aim to create aesthetically pleasing and readable stacked graphs by optimizing the layout to minimize "wiggles" or abrupt changes in layer slopes, often weighting thicker layers more heavily.</explanation>
+  </problem>
+  <problem>
+    <question>In a TimeWheel visualization, how are the time axis and variable axes typically arranged?</question>
+    <answers>
+      <answer correct="true">The time axis is in the center of the display, and variable axes are arranged around it in a regular polygonal manner.</answer>
+      <answer>Variable axes are in the center, and the time axis is arranged around the perimeter.</answer>
+      <answer>Both time and variable axes are arranged linearly along a horizontal or vertical line.</answer>
+      <answer>The time axis is horizontal, and variable axes are stacked vertically in a grid.</answer>
+    </answers>
+    <explanation>TimeWheel uses a focus+context approach where the central time axis is the focus, and multiple variable axes are positioned radially around it.</explanation>
+  </problem>
+  <problem>
+    <question>According to the slides on Relational Data Representations, how is a Tree defined in relation to a Graph?</question>
+    <answers>
+      <answer correct="true">A tree is a connected graph with no cycles.</answer>
+      <answer>A graph is always a type of tree, but with additional edges.</answer>
+      <answer>A tree can have multiple cycles, but it must be a directed graph.</answer>
+      <answer>A graph is always hierarchical, whereas a tree is not necessarily so.</answer>
+    </answers>
+    <explanation>A tree is a specific type of graph structure that is connected (all nodes are reachable) and acyclic (contains no cycles).</explanation>
+  </problem>
+  <problem>
+    <question>In a Force Directed Layout (also known as a Spring Embedder), what do edges and vertices typically represent in the physical simulation?</question>
+    <answers>
+      <answer correct="true">Edges are replaced with springs (attractive forces), and vertices are repelling charged particles (repulsive forces).</answer>
+      <answer>Edges are repelling forces, and vertices are attractive forces.</answer>
+      <answer>Both edges and vertices exert only attractive forces towards each other.</answer>
+      <answer>Both edges and vertices exert only repulsive forces against each other.</answer>
+    </answers>
+    <explanation>Force-directed layouts simulate a physical system where edges act as springs pulling connected nodes together, and nodes act as charged particles repelling each other to find an equilibrium state.</explanation>
+  </problem>
+  <problem>
+    <question>Ontologies, as a form of formal knowledge representation in relational data, consist of which primary components?</question>
+    <answers>
+      <answer correct="true">Concepts or Entities (defining categories &amp; properties) and Relations between them.</answer>
+      <answer>Only a list of entities without any defined relations connecting them.</answer>
+      <answer>Only a set of relations without any clearly defined entities or concepts.</answer>
+      <answer>A flat list of data points without any inherent structure or categories.</answer>
+    </answers>
+    <explanation>Ontologies define a domain by specifying its core concepts (or entities) with their properties, and the relationships that exist between these concepts.</explanation>
+  </problem>
+  <problem>
+    <question>Which network analysis task is primarily concerned with understanding paths and connections within the data by interactive exploration?</question>
+    <answers>
+      <answer correct="true">Browsing and Exploring</answer>
+      <answer>Estimation (Summarization and Temporal Changes)</answer>
+      <answer>Structure-Based Analysis (Relationships and Connectivity)</answer>
+      <answer>Attribute-Based Analysis (Specific Node and Link Attributes)</answer>
+    </answers>
+    <explanation>Browsing and Exploring tasks involve interactively navigating the network to understand paths, discover connections, and gain an overview of the data structure.</explanation>
+  </problem>
+  <problem>
+    <question>What does a Sugiyama-Style Layout primarily emphasize in a graph visualization?</question>
+    <answers>
+      <answer correct="true">Hierarchy</answer>
+      <answer>Geographical proximity of nodes</answer>
+      <answer>Clustering of densely connected components</answer>
+      <answer>Temporal sequence of node appearance</answer>
+    </answers>
+    <explanation>Sugiyama-style layouts are designed to clearly depict hierarchical structures in directed graphs by arranging nodes in layers and minimizing edge crossings between layers.</explanation>
+  </problem>
+  <problem>
+    <question>What is the primary purpose of edge bundling in network visualization?</question>
+    <answers>
+      <answer correct="true">To reduce visual clutter by grouping or routing edges that share parts of their paths.</answer>
+      <answer>To assign weights to edges based on their length or importance.</answer>
+      <answer>To color nodes based on their connectivity or community structure.</answer>
+      <answer>To create a strict hierarchical layout of the graph structure.</answer>
+    </answers>
+    <explanation>Edge bundling techniques aim to simplify complex network visualizations by grouping edges that follow similar paths, thereby reducing clutter and revealing high-level patterns.</explanation>
+  </problem>
+  <problem>
+    <question>In an adjacency matrix representation of a graph, what do the elements of the matrix typically indicate?</question>
+    <answers>
+      <answer correct="true">Whether pairs of vertices are adjacent in the graph, and potentially the weight of the edge.</answer>
+      <answer>The geographical coordinates of the vertices on a map.</answer>
+      <answer>The attributes or properties of the vertices themselves.</answer>
+      <answer>The order in which vertices were added to the graph during its construction.</answer>
+    </answers>
+    <explanation>An adjacency matrix represents connections: a non-zero element at (i, j) indicates an edge between vertex i and vertex j. The value can represent the edge's existence or its weight.</explanation>
+  </problem>
+  <problem>
+    <question>What is a common disadvantage of using an indented layout (like a file explorer tree) for visualizing hierarchies?</question>
+    <answers>
+      <answer correct="true">It can quickly run out of horizontal space, especially for deep or wide hierarchies.</answer>
+      <answer>It does not clearly show node relationships or parent-child connections.</answer>
+      <answer>It is not suitable for structure-based browsing or navigation tasks.</answer>
+      <answer>It cannot represent any attributes of the nodes in the hierarchy.</answer>
+    </answers>
+    <explanation>Indented layouts use horizontal space for each level of indentation, which can lead to very wide displays that are hard to view for deep or broad hierarchies.</explanation>
+  </problem>
+  <problem>
+    <question>In a Radial Tree Layout, how is the depth of nodes (distance from the root) typically encoded?</question>
+    <answers>
+      <answer correct="true">By the radius from the center, with the root at the center and subsequent levels at increasing radii.</answer>
+      <answer>By the angle of the sector assigned to the node within the circle.</answer>
+      <answer>By the size or area of the node's visual representation.</answer>
+      <answer>By the color intensity or hue of the node.</answer>
+    </answers>
+    <explanation>Radial tree layouts place the root at the center, and each subsequent level of the hierarchy is arranged on concentric circles at increasing distances (radii) from the center.</explanation>
+  </problem>
+  <problem>
+    <question>What is the special focus of the Squarified Treemap algorithm compared to the original Slice &amp; Dice algorithm?</question>
+    <answers>
+      <answer correct="true">To improve the aspect ratios of the resulting rectangular display partitions, making them more square-like.</answer>
+      <answer>To strictly maintain the original input order of items at all costs.</answer>
+      <answer>To use non-rectangular, circular shapes for representing nodes.</answer>
+      <answer>To minimize the total area used by the treemap display for compactness.</answer>
+    </answers>
+    <explanation>Squarified treemaps prioritize creating rectangles with aspect ratios closer to 1 (i.e., more square-like), which are generally easier to compare visually than long, thin rectangles produced by Slice &amp; Dice.</explanation>
+  </problem>
+  <problem>
+    <question>If a map projection aims to preserve angles locally, ensuring that the shapes of small areas are accurately represented, it is known as a:</question>
+    <answers>
+      <answer correct="true">Conformal Map</answer>
+      <answer>Equal-Area Map</answer>
+      <answer>Equidistant Map</answer>
+      <answer>Azimuthal Map</answer>
+    </answers>
+    <explanation>Conformal map projections preserve local angles and shapes. This means that, for any given point, the scale is the same in all directions, preventing distortion of small features' shapes.</explanation>
+  </problem>
+  <problem>
+    <question>What is Tissot's Indicatrix primarily used for in cartography?</question>
+    <answers>
+      <answer correct="true">To characterize and visualize local distortions of area, shape, and scale introduced by a map projection.</answer>
+      <answer>To determine the precise age and origin of an antique map.</answer>
+      <answer>To show lines of equal magnetic declination across the globe.</answer>
+      <answer>To plot population density changes over time in different regions.</answer>
+    </answers>
+    <explanation>Tissot's Indicatrix is a graphical tool that uses ellipses to illustrate how a map projection distorts the geometry of the Earth's surface at different locations.</explanation>
+  </problem>
+  <problem>
+    <question>Dr. John Snow's 1844 Cholera Map of London is a famous early example of using geo-spatial visualization to achieve what?</question>
+    <answers>
+      <answer correct="true">Identify the source of a disease outbreak by showing clusters of deaths around a contaminated water pump.</answer>
+      <answer>Plan new road construction and urban development in London.</answer>
+      <answer>Show the overall population density across different London boroughs.</answer>
+      <answer>Map the political boundaries and administrative districts of the city.</answer>
+    </answers>
+    <explanation>Dr. Snow's map is a seminal work in epidemiology and medical geography, as it visually linked cholera cases to a specific public water pump, helping to identify the mode of transmission.</explanation>
+  </problem>
+  <problem>
+    <question>How do Pixel Maps, as a solution to dot map overlap, generally position data points?</question>
+    <answers>
+      <answer correct="true">By placing the first data items at their correct geo-spatial position and then positioning subsequently overlapping data points at nearby unoccupied pixel positions.</answer>
+      <answer>By making all dots semi-transparent so that overlaps become visible as darker areas.</answer>
+      <answer>By aggregating all dots within a certain radius into a single, larger symbol.</answer>
+      <answer>By using a 3D visualization to separate overlapping dots along a vertical (Z) axis.</answer>
+    </answers>
+    <explanation>Pixel maps aim for an overlap-free visualization by assigning each data point to a unique pixel, placing it as close as possible to its true geographic location if that pixel is already occupied.</explanation>
+  </problem>
+  <problem>
+    <question>What is a common perceptual issue with choropleth maps related to the "Area Size is not equal Effect Size" challenge?</question>
+    <answers>
+      <answer correct="true">Larger geographic areas can visually dominate the map, even if they are of lower importance regarding the variable being mapped (e.g., low population density but large land area).</answer>
+      <answer>Smaller geographic areas are always harder to see and interpret, regardless of their data value.</answer>
+      <answer>The colors used in choropleth maps are often not perceptually uniform, leading to misinterpretations.</answer>
+      <answer>Choropleth maps cannot effectively represent quantitative data, only categorical data.</answer>
+    </answers>
+    <explanation>The visual impact of a region in a choropleth map is often proportional to its geographic size. If the mapped variable (e.g., number of voters) is not correlated with area, large, sparsely populated regions can misleadingly appear more significant.</explanation>
+  </problem>
+  <problem>
+    <question>What is the defining characteristic of a Cartogram as a type of map transformation?</question>
+    <answers>
+      <answer correct="true">Regions on the map are resized or distorted proportionally to a geographically related variable (e.g., population, GDP) rather than their true land area.</answer>
+      <answer>They use symbols of varying sizes (like proportional circles) placed within geographically accurate regions to represent data.</answer>
+      <answer>They shade geographically accurate regions based on a statistical variable, similar to choropleth maps.</answer>
+      <answer>They are maps that only show topological connections between regions, ignoring geographic accuracy.</answer>
+    </answers>
+    <explanation>Cartograms distort the geometry (area or sometimes shape) of map regions to encode a data variable, making the visual size of a region directly proportional to that variable.</explanation>
+  </problem>
+  <problem>
+    <question>In a Space-Time Cube visualization, what does the vertical axis typically represent?</question>
+    <answers>
+      <answer correct="true">Time</answer>
+      <answer>The magnitude or intensity of an event</answer>
+      <answer>A categorical attribute of the events being plotted</answer>
+      <answer>The latitude of the events' geographic locations</answer>
+    </answers>
+    <explanation>The Space-Time Cube uses two horizontal axes for spatial dimensions (e.g., x and y, or longitude and latitude) and the vertical axis to represent the temporal dimension.</explanation>
+  </problem>
+  <problem>
+    <question>How does the typical linguistic quality of highly-edited texts (e.g., novels, scientific articles) compare to verbatim text transcripts (e.g., political debates, online discussions)?</question>
+    <answers>
+      <answer correct="true">Highly-edited texts typically have a higher level of formal writing (literary/technical), while verbatim transcripts may contain non-standard lexical items, disfluencies, and varied syntactic patterns.</answer>
+      <answer>Verbatim text transcripts always exhibit higher linguistic quality and grammatical correctness due to their spontaneous nature.</answer>
+      <answer>Both types of text generally have identical linguistic quality and structural homogeneity.</answer>
+      <answer>Highly-edited texts are always shorter and less complex than verbatim transcripts.</answer>
+    </answers>
+    <explanation>Highly-edited texts undergo revision and refinement, leading to more formal and structured language. Verbatim transcripts capture spoken language, which is often less formal and can include interruptions, errors, and colloquialisms.</explanation>
+  </problem>
+  <problem>
+    <question>The statement "Text is not Pre-Attentive" in the context of visualization challenges implies that:</question>
+    <answers>
+      <answer correct="true">Text generally needs to be read and cognitively processed to be understood, unlike some visual features (e.g., color, shape) that can be perceived rapidly and in parallel.</answer>
+      <answer>Text cannot be visually processed by the human brain at all.</answer>
+      <answer>Text is always easier to understand at a glance than any graphical representation.</answer>
+      <answer>Pre-attentive visual processing is a concept not applicable to any form of information display, including text.</answer>
+    </answers>
+    <explanation>Pre-attentive visual features are those that "pop out" and can be processed very quickly by the low-level visual system. Text, however, typically requires focused attention and sequential processing (reading) for comprehension.</explanation>
+  </problem>
+  <problem>
+    <question>What is a key characteristic regarding the notion of similarity for one-hot vector representations of words?</question>
+    <answers>
+      <answer correct="true">There is no natural notion of similarity; all distinct one-hot vectors are orthogonal and equidistant from each other.</answer>
+      <answer>Words with similar meanings will have one-hot vectors that are very close in Euclidean space.</answer>
+      <answer>One-hot vectors directly encode the semantic meaning and context of words.</answer>
+      <answer>The length (number of non-zero elements) of the one-hot vector indicates the frequency of the word.</answer>
+    </answers>
+    <explanation>In a one-hot representation, each word is a vector with a single '1' and all other elements as '0'. This means any two distinct words will have orthogonal vectors, making it impossible to represent semantic similarity directly.</explanation>
+  </problem>
+  <problem>
+    <question>What is the primary goal of creating word embeddings (e.g., Word2Vec, GloVe) in natural language processing?</question>
+    <answers>
+      <answer correct="true">To build a dense vector of a lower dimensionality for each word, such that words appearing in similar contexts have similar vector representations.</answer>
+      <answer>To create a unique, high-dimensional, sparse (one-hot) vector for every word in the vocabulary.</answer>
+      <answer>To count the absolute frequency of each word's occurrence within a large corpus of text.</answer>
+      <answer>To parse the complete grammatical structure of sentences in which each word appears.</answer>
+    </answers>
+    <explanation>Word embeddings aim to capture semantic relationships between words by mapping them to a lower-dimensional continuous vector space where proximity reflects contextual similarity.</explanation>
+  </problem>
+  <problem>
+    <question>In a typical Word Cloud visualization, how is the size of a displayed word (term) usually determined?</question>
+    <answers>
+      <answer correct="true">By the frequency or importance of the term within the source text or document collection.</answer>
+      <answer>By the alphabetical order of the term in the vocabulary.</answer>
+      <answer>By the length of the term (number of characters).</answer>
+      <answer>Randomly, to create an aesthetically pleasing but arbitrary layout.</answer>
+    </answers>
+    <explanation>The most common convention for word clouds is to scale the font size of each word proportionally to its frequency or some other measure of importance in the input text.</explanation>
+  </problem>
+  <problem>
+    <question>What is a "Lexical Episode" in the context of text analysis and visualization?</question>
+    <answers>
+      <answer correct="true">A portion within the word sequence of a corpus where a certain word appears more densely (more frequently) than expected from its overall frequency in the whole text.</answer>
+      <answer>A formally defined chapter or section of a book or long document.</answer>
+      <answer>Any sentence that contains a particularly rare or unusual word.</answer>
+      <answer>A complete document that is primarily focused on a single, specific topic.</answer>
+    </answers>
+    <explanation>Lexical episodes highlight "bursts" or local concentrations of specific words, indicating segments of text where that word is particularly prominent or discussed more intensely than average.</explanation>
+  </problem>
+  <problem>
+    <question>TextFlow is a visualization technique primarily designed for what purpose in text analysis?</question>
+    <answers>
+      <answer correct="true">Understanding the evolution of topics and their relationships in text streams over time.</answer>
+      <answer>Visualizing the static grammatical structure of a single document or sentence.</answer>
+      <answer>Comparing the writing styles and vocabulary choices of different authors.</answer>
+      <answer>Analyzing the emotional sentiment expressed in individual words or short phrases.</answer>
+    </answers>
+    <explanation>TextFlow uses a river metaphor (similar to ThemeRiver) to visualize how topics (represented as flows) emerge, evolve, merge, or split over a period, often in dynamic text collections.</explanation>
+  </problem>
+  <problem>
+    <question>The "Literature Fingerprinting" visualization technique, as shown in the slides, aims to:</question>
+    <answers>
+      <answer correct="true">Provide a high-level visual comparison of writing styles or content patterns across different literary works and authors by segmenting texts and encoding features for these segments.</answer>
+      <answer>Allow users to read the full text of each book within a compact visual interface.</answer>
+      <answer>Display the real-time sales figures and popularity rankings for various books.</answer>
+      <answer>Visualize the detailed plot structure and character development within each novel.</answer>
+    </answers>
+    <explanation>Literature fingerprinting creates a visual signature for texts by analyzing features (like sentence length, word usage) in segments, facilitating comparison of stylistic or thematic patterns.</explanation>
+  </problem>
+  <problem>
+    <question>What is the primary purpose of "Language Model Fingerprints" as a visualization technique?</question>
+    <answers>
+      <answer correct="true">To provide a compact visual summary of a language model's characteristics across different layers and linguistic properties, facilitating comparison between models.</answer>
+      <answer>To generate new text sequences using the selected language model based on user prompts.</answer>
+      <answer>To fine-tune a pre-trained language model for a specific downstream natural language processing task.</answer>
+      <answer>To measure the computational inference speed and hardware requirements of a language model.</answer>
+    </answers>
+    <explanation>Language Model Fingerprints offer a comparative overview of how different models behave regarding various linguistic phenomena (e.g., similarity, part-of-speech tagging) across their internal layers, aiding in model understanding and selection.</explanation>
+  </problem>
+  <problem>
+    <question>The StereoSet dataset is primarily used to evaluate what aspect of language models?</question>
+    <answers>
+      <answer correct="true">Stereotypical biases present in the models' associations and predictions related to gender, race, religion, and profession.</answer>
+      <answer>The grammatical correctness and fluency of the text generated by the models.</answer>
+      <answer>The factual accuracy and truthfulness of the information produced by the models.</answer>
+      <answer>The models' ability to understand and generate humorous or sarcastic content.</answer>
+    </answers>
+    <explanation>StereoSet is a benchmark designed to measure stereotypical biases in language models by presenting them with sentence pairs that differ in stereotypical associations and evaluating their preferences.</explanation>
+  </problem>
+  <problem>
+    <question>In the context of stacked area charts, what does the "silhouette" optimization (as used in ThemeRiver) aim to achieve?</question>
+    <answers>
+      <answer correct="true">To make the upper and lower border of the graph as close to a central baseline as possible, resulting in a vertically symmetric appearance.</answer>
+      <answer>To ensure that each layer maintains a constant thickness throughout its length.</answer>
+      <answer>To sort the layers based on their initial appearance time (onset-time).</answer>
+      <answer>To maximize the "wiggliness" or variability of each layer to highlight changes.</answer>
+    </answers>
+    <explanation>The silhouette optimization aims to create a more aesthetically pleasing and balanced stacked area chart by centering the layers around a baseline, often making the overall shape symmetric.</explanation>
+  </problem>
+  <problem>
+    <question>What is a primary advantage of using spiral-based layouts (like Time Spirals) for visualizing periodic temporal data compared to linear layouts?</question>
+    <answers>
+      <answer correct="true">Periodic attributes become more easily visible as patterns along the radii of the spiral.</answer>
+      <answer>They can display a much longer time series in the same amount of screen space.</answer>
+      <answer>They completely eliminate any form of occlusion or overplotting.</answer>
+      <answer>They are better suited for visualizing non-periodic, event-based data.</answer>
+    </answers>
+    <explanation>Spiral layouts naturally align data points from different cycles along the same angular position (radii), making it easier to spot recurring patterns or seasonal trends.</explanation>
+  </problem>
+  <problem>
+    <question>The "Calender View" visualization often uses cluster analysis for what purpose when displaying time-series data?</question>
+    <answers>
+      <answer correct="true">To detect and group similar daily patterns (e.g., typical workday, weekend day) and represent each cluster with an average day pattern.</answer>
+      <answer>To identify the exact date and time of the highest and lowest recorded values in the dataset.</answer>
+      <answer>To smooth out noise in the time-series data using a moving average filter.</answer>
+      <answer>To predict future data values based on past trends and seasonality.</answer>
+    </answers>
+    <explanation>Calendar views often employ clustering to identify recurring daily or weekly patterns in time-series data (like energy consumption or website traffic), simplifying the overview by showing average patterns for each cluster.</explanation>
+  </problem>
+  <problem>
+    <question>What is the main advantage of "Braided Area Charts" over traditional "Stacked Area Charts" when visualizing multiple overlapping time series?</question>
+    <answers>
+      <answer correct="true">They reduce occlusion by "braiding" or interleaving layers at intersection points, allowing better visibility of individual series.</answer>
+      <answer>They always show the exact, unstacked value of each time series, eliminating any need for mental calculation.</answer>
+      <answer>They can represent a significantly larger number of time series without any visual clutter.</answer>
+      <answer>They use a 3D perspective to separate the layers, enhancing depth perception.</answer>
+    </answers>
+    <explanation>Braided area charts address the occlusion problem in stacked area charts by visually weaving the layers at points where their order would change, making it easier to follow individual series even when they cross.</explanation>
+  </problem>
+  <problem>
+    <question>Which of the following is a key characteristic of a "Rooted Tree" in graph theory?</question>
+    <answers>
+      <answer correct="true">It has a distinguished vertex called the root node, and every other vertex has a unique directed path from the root to it.</answer>
+      <answer>It must be an undirected tree where any node can act as the root.</answer>
+      <answer>It is a tree structure that is guaranteed to contain at least one cycle.</answer>
+      <answer>The root node is the only node that is allowed to have children.</answer>
+    </answers>
+    <explanation>A rooted tree designates one node as the root, establishing a clear hierarchy where all other nodes are descendants accessible via a unique path from this root.</explanation>
+  </problem>
+  <problem>
+    <question>What is the primary trade-off when choosing a map projection for geo-spatial visualization?</question>
+    <answers>
+      <answer correct="true">Different projections preserve different geometric properties (e.g., area, shape, distance, direction) at the expense of distorting others; no flat map can preserve all properties perfectly.</answer>
+      <answer>Some projections are computationally much more expensive to calculate than others, limiting their use in real-time applications.</answer>
+      <answer>Certain projections are only suitable for mapping very small regions of the Earth, not the entire globe.</answer>
+      <answer>The choice of projection primarily affects the color scheme and labeling of the map, not its geometric accuracy.</answer>
+    </answers>
+    <explanation>The fundamental challenge of map projections is that a sphere cannot be flattened onto a 2D plane without some distortion. Cartographers must choose which properties are most important to preserve for a given map's purpose, as other properties will inevitably be distorted.</explanation>
+  </problem>
+  <problem>
+    <question>In the context of representing text data, what does "Corpus-Level Visualization" primarily focus on?</question>
+    <answers>
+      <answer correct="true">Visualizing patterns, trends, and relationships across entire collections of documents (corpora).</answer>
+      <answer>Analyzing the meaning and sentiment of individual words or short phrases.</answer>
+      <answer>Visualizing the detailed grammatical structure and syntax of single sentences.</answer>
+      <answer>Displaying the full content of a single document in a visually engaging way.</answer>
+    </answers>
+    <explanation>Corpus-level visualizations aim to provide insights into large sets of documents, such as identifying overarching themes, comparing document clusters, or tracking changes in a collection over time.</explanation>
+  </problem>
+  <problem>
+    <question>The concept of "Interactive Ambiguity Resolution of Named Entities in Fictional Literature" involves what primary challenge related to text data?</question>
+    <answers>
+      <answer correct="true">Identifying and correctly linking mentions of characters that may be referred to by different names, nicknames, or pronouns throughout a text.</answer>
+      <answer>Translating fictional literature from one language to another while preserving the original author's style.</answer>
+      <answer>Summarizing the plot of a fictional work into a concise and easily understandable abstract.</answer>
+      <answer>Determining the genre (e.g., fantasy, science fiction, mystery) of a piece of fictional literature based on its vocabulary.</answer>
+    </answers>
+    <explanation>Named entity disambiguation in fiction is challenging because authors often use varied references for the same character (e.g., "Harry," "Potter," "the boy who lived"). Interactive visualization can help users resolve these ambiguities.</explanation>
+  </problem>
+  <problem>
+    <question>What is a primary benefit of using typography as a visual variable in text visualization, beyond simply displaying the text itself?</question>
+    <answers>
+      <answer correct="true">Typographic attributes (e.g., font size, weight, color, style) can be used to encode additional information or highlight specific features within the text.</answer>
+      <answer>It ensures that all text is displayed in a universally readable and standardized font, minimizing stylistic variations.</answer>
+      <answer>It allows for the automatic generation of abstract pictorial representations of the text's meaning.</answer>
+      <answer>It primarily focuses on improving the aesthetic appeal of the text without conveying extra data dimensions.</answer>
+    </answers>
+    <explanation>By systematically varying typographic properties, designers can visually encode data attributes directly onto the text, allowing readers to perceive patterns or emphasize certain aspects (e.g., highlighting keywords, showing sentiment through color).</explanation>
+  </problem>
+  <problem>
+    <question>What is the main idea behind "Visual Sedimentation" as a technique for visualizing dynamic data streams, particularly topic evolution?</question>
+    <answers>
+      <answer correct="true">New data items (e.g., representing topics) "flow" into the visualization and "settle" over time, creating layers that show historical trends and current activity.</answer>
+      <answer>It creates a static, hierarchical tree diagram of all topics present in the data stream at a single point in time.</answer>
+      <answer>It uses a scatter plot to show the similarity between different topics based on their constituent keywords.</answer>
+      <answer>It converts the textual data stream into a continuous audio signal where pitch represents topic importance.</answer>
+    </answers>
+    <explanation>Visual Sedimentation uses a metaphor of particles flowing and accumulating to represent evolving data. New information appears and gradually "sediments" or stacks up, forming layers that provide a temporal history of the data, often used for topic trends in text streams.</explanation>
+  </problem>
+  <problem>
+    <question>In the context of Relational Data Representations (Slide 3), what distinguishes a "Rooted Tree" from other trees?</question>
+    <answers>
+      <answer correct="true">It has a distinguished vertex called the root node, and every other vertex has a unique directed path from this root to it.</answer>
+      <answer>It is an undirected tree where any node can be considered the root.</answer>
+      <answer>It must contain at least one cycle to connect back to the root.</answer>
+      <answer>The root node is the only node that does not have any edges connected to it.</answer>
+    </answers>
+    <explanation>A rooted tree establishes a specific hierarchy by designating one node as the root. All other nodes are descendants of this root, and there's a clear parent-child relationship established through directed paths originating from the root.</explanation>
+  </problem>
+  <problem>
+    <question>According to the Treemap Layout Comparison (Slide 5 &amp; 77), what is a primary advantage of Squarified Treemaps over the standard (Slice-and-Dice) Treemap algorithm?</question>
+    <answers>
+      <answer correct="true">Squarified treemaps generally produce rectangles with better aspect ratios (closer to squares), which are easier to compare visually.</answer>
+      <answer>Squarified treemaps are always more stable and less sensitive to small changes in the underlying data.</answer>
+      <answer>Squarified treemaps are computationally much simpler and faster to compute than standard treemaps.</answer>
+      <answer>Squarified treemaps better preserve the hierarchical structure and make it more obvious than standard treemaps.</answer>
+    </answers>
+    <explanation>The Squarified Treemap algorithm prioritizes generating rectangles with aspect ratios close to 1. This makes it easier for users to accurately compare the areas of different rectangles, which is a key task in treemap interpretation. Standard Slice-and-Dice can result in very long, thin rectangles that are difficult to compare.</explanation>
+  </problem>
+  <problem>
+    <question>The "Time Series Analysis Tasks" slides (15-16) list "Synchronization" as a task. What question does synchronization aim to answer?</question>
+    <answers>
+      <answer correct="true">Do data elements exist together (at the same time)?</answer>
+      <answer>In what order do data elements appear?</answer>
+      <answer>How often does a data element occur?</answer>
+      <answer>How fast is a data element changing?</answer>
+    </answers>
+    <explanation>Synchronization is concerned with whether different events or data elements co-occur or exist concurrently in time. An example given is "Is Jill‘s birthday on Easter Monday this year?"</explanation>
+  </problem>
+  <problem>
+    <question>What is the primary mechanism by which Horizon Graphs achieve space efficiency in visualizing multiple time series?</question>
+    <answers>
+      <answer correct="true">By dividing the graph into bands, coloring them (e.g., blue for positive, red for negative), and then layering and mirroring these bands into a more compact vertical space.</answer>
+      <answer>By using a logarithmic scale for the time axis, compressing longer durations.</answer>
+      <answer>By representing each time series as a single-pixel high line, allowing many to be stacked.</answer>
+      <answer>By applying aggressive smoothing to remove all detailed fluctuations in the data.</answer>
+    </answers>
+    <explanation>Horizon graphs reduce the vertical space needed for each time series by "folding" or "layering" the graph. Positive and negative parts are often colored differently, and segments exceeding a certain height are wrapped around and overlaid, using color intensity to indicate magnitude.</explanation>
+  </problem>
+  <problem>
+    <question>LifeLines (Slide 43) is a visualization technique designed for what type of temporal data, and what is a key visual encoding it uses?</question>
+    <answers>
+      <answer correct="true">Medical records (personal histories); line thickness often shows severity or dosage of treatments/manifestations.</answer>
+      <answer>Stock market data; color encodes the stock's sector.</answer>
+      <answer>Wikipedia revision histories; vertical lines represent different versions.</answer>
+      <answer>Climate data; spiral layouts show seasonal patterns.</answer>
+    </answers>
+    <explanation>LifeLines are designed to visualize personal histories, particularly medical records, over time. They represent events like consultations, manifestations, and treatments as lines on a timeline, where attributes like line thickness can encode quantitative information such as severity or dosage.</explanation>
+  </problem>
+  <problem>
+    <question>The History Flow visualization (Slide 44-46) for Wikipedia revision histories uses color primarily to represent what?</question>
+    <answers>
+      <answer correct="true">Each contributor (author) is assigned a unique color, so sections of text are colored according to who wrote them.</answer>
+      <answer>The age of the text, with older text being darker and newer text lighter.</answer>
+      <answer>The sentiment of the text, with positive contributions in green and negative in red.</answer>
+      <answer>The topic of the text segment, based on keyword analysis.</answer>
+    </answers>
+    <explanation>In History Flow, colors are assigned to individual contributors. When text is added or modified, it is colored according to the author responsible for that change, allowing users to see patterns of contribution and conflict.</explanation>
+  </problem>
+  <problem>
+    <question>According to the "Improve Stacked Area Graphs" section (Slides 47-55), if the baseline function $g_0$ is set to 0, what type of graph does this represent?</question>
+    <answers>
+      <answer correct="true">The traditional stacked area graph.</answer>
+      <answer>A Streamgraph with silhouette optimization.</answer>
+      <answer>A ThemeRiver where layers are ordered by onset time.</answer>
+      <answer>A Horizon Graph with multiple bands.</answer>
+    </answers>
+    <explanation>When the baseline function $g_0$ (the bottom of the stacked graph) is zero, each subsequent layer is stacked directly on top of the previous one, which is the definition of a traditional stacked area graph. Other layouts modify this baseline for different visual effects.</explanation>
+  </problem>
+  <problem>
+    <question>The "Time Spiral Display" (Slide 72-73) often uses one lap of the spiral to represent one year and spokes for each month. How is the data value (e.g., consumption percentage) typically encoded in this visualization?</question>
+    <answers>
+      <answer correct="true">The area of the plot (e.g., a dot or bar) at a specific month's spoke is proportional to the observed data value.</answer>
+      <answer>The color of the spoke for that month represents the data value.</answer>
+      <answer>The length of the spoke itself is proportional to the data value.</answer>
+      <answer>The thickness of the spiral line at that point encodes the data value.</answer>
+    </answers>
+    <explanation>In the described Time Spiral Display, the magnitude of the data for a specific time point (month) is typically encoded by the size or area of a visual mark (like a dot or the height of a bar) placed along the corresponding spoke and spiral lap.</explanation>
+  </problem>
+  <problem>
+    <question>What is the primary goal of the cartogram construction algorithm shown in the "Cartogram Construction Algorithm" slides (63-73 in Geo-Spatial deck), where the objective is "Preserve Aspect Ratio"?</question>
+    <answers>
+      <answer correct="true">To resize geographic regions based on a data variable while attempting to maintain the original shapes (aspect ratios) of those regions as much as possible.</answer>
+      <answer>To ensure that all regions are represented by perfect squares of equal size, regardless of the data variable.</answer>
+      <answer>To create a flow map showing movement between regions, with arrow thickness proportional to the data variable.</answer>
+      <answer>To divide each region into a grid of pixels, coloring each pixel based on the data variable.</answer>
+    </answers>
+    <explanation>This type of cartogram (e.g., a Gastner-Newman diffusion cartogram) distorts areas to reflect a data variable but tries to minimize shape distortion, thus preserving the recognizable aspect ratios of the original geographic entities.</explanation>
+  </problem>
+  <problem>
+    <question>The "Map of Napoleon's Russian Campaign of 1812" by Charles Joseph Minard (Slide 38, Temporal Data and Slide 76, Geo-Spatial Data) is a famous example of what type of visualization, effectively combining multiple data dimensions?</question>
+    <answers>
+      <answer correct="true">A flow map showing army size, geographic path, direction, and temperature over time.</answer>
+      <answer>A choropleth map showing population density in different regions of Russia.</answer>
+      <answer>A scatter plot showing the correlation between troop morale and distance traveled.</answer>
+      <answer>A treemap showing the logistical breakdown of supplies for the French army.</answer>
+    </answers>
+    <explanation>Minard's map is a seminal example of a flow map (and statistical graphic) that brilliantly integrates multiple variables: the width of the band shows army size, its path shows geographic movement and direction, and it's linked to a timeline with temperature data below.</explanation>
+  </problem>
+  <problem>
+    <question>What is a key problem that "Edge Bundling" techniques aim to solve in network visualizations, especially for dense graphs (e.g., Flight Pattern Visualization, Slide 84-87, Geo-Spatial deck)?</question>
+    <answers>
+      <answer correct="true">Reduce visual clutter by grouping or merging edges that follow similar paths, making high-level structures more apparent.</answer>
+      <answer>Ensure that all nodes in the graph are placed in a perfectly circular layout.</answer>
+      <answer>Assign a unique color to each edge based on its weight or importance.</answer>
+      <answer>Convert the node-link diagram into an adjacency matrix representation for better scalability.</answer>
+    </answers>
+    <explanation>In dense graphs, numerous overlapping edges can create significant visual clutter. Edge bundling reduces this by routing edges that share common paths together, simplifying the display and revealing underlying flow patterns or connectivity structures.</explanation>
+  </problem>
+  <problem>
+    <question>In the "Word Tree" visualization (Slide 55, Text Data deck), what does the visualization primarily show starting from a user-selected word or phrase?</question>
+    <answers>
+      <answer correct="true">The different contexts (sequences of words) that follow or precede the selected word/phrase in the text, arranged in a tree-like structure where branches represent common continuations.</answer>
+      <answer>A hierarchical clustering of all words in the document based on their semantic similarity to the selected word/phrase.</answer>
+      <answer>The frequency of the selected word/phrase in different sections or chapters of the document.</answer>
+      <answer>A list of synonyms and antonyms for the selected word/phrase, derived from a thesaurus.</answer>
+    </answers>
+    <explanation>A Word Tree allows users to explore the contextual usage of a specific word or phrase. It branches out to show the various word sequences that occur immediately after (or before) the chosen term in the source text, with branch size often indicating frequency.</explanation>
+  </problem>
+  <problem>
+    <question>The "Matrix Visualization for Review Analysis" (Slide 72, Text Data deck) uses the size of the inner rectangle and color to represent what aspects of customer feedback?</question>
+    <answers>
+      <answer correct="true">Size of inner rectangle: amount of customers who commented on an attribute; blue color: positive opinions; red color: negative opinions; brightness of color: degree of positiveness/negativeness.</answer>
+      <answer>Size of inner rectangle: overall product rating; blue color: products from a specific brand; red color: products from a competing brand; brightness: price.</answer>
+      <answer>Size of inner rectangle: length of the review text; blue color: reviews mentioning ease of use; red color: reviews mentioning technical issues; brightness: age of the review.</answer>
+      <answer>Size of inner rectangle: number of features the printer has; blue color: features related to printing; red color: features related to scanning; brightness: user satisfaction with the feature.</answer>
+    </answers>
+    <explanation>This matrix summarizes customer feedback by mapping the number of comments on a feature to the inner rectangle size, and the sentiment (positive/negative) and its intensity to the color and brightness, respectively.</explanation>
+  </problem>
+  <problem>
+    <question>What is a primary goal of the "Literature Fingerprinting" technique in the context of corpus-level text visualization (Slide 103, Text Data deck)?</question>
+    <answers>
+      <answer correct="true">To create a visual signature for texts (e.g., books) by analyzing and encoding features (like function word frequencies or sentence length) in sequential segments, allowing for comparison of writing styles or content patterns across a corpus.</answer>
+      <answer>To generate an interactive word cloud for each book in a literary collection, highlighting the most frequent terms.</answer>
+      <answer>To build a social network graph of characters and their interactions within each novel.</answer>
+      <answer>To translate literary works into a formal logic representation for automated reasoning and plot analysis.</answer>
+    </answers>
+    <explanation>Literature fingerprinting breaks texts into segments and calculates various linguistic features for each segment. These features are then visualized (often as colored bands or heatmaps) to create a "fingerprint" for each text, enabling visual comparison of styles, authorship, or thematic development across multiple works.</explanation>
+  </problem>
+  <problem>
+    <question>The "Language Model Fingerprints" visualization (Slides 118-121, Text Data deck) aims to show that function word embeddings (like for the token "A") can encode what kind of information, particularly in deeper layers of models like BERT?</question>
+    <answers>
+      <answer correct="true">Semantic information, as their nearest neighbors in embedding space shift from primarily other function words in early layers to more content-rich, semantically related words in deeper layers.</answer>
+      <answer>Only syntactic information, as their nearest neighbors consistently remain other function words or punctuation across all layers.</answer>
+      <answer>Primarily phonetic information, as their embeddings cluster with words that sound similar.</answer>
+      <answer>No discernible or meaningful information, indicating that function words are largely ignored by the language model.</answer>
+    </answers>
+    <explanation>The visualizations suggest that even function words (like "a") can acquire semantic meaning in the contextualized embeddings of deep language models. While their neighbors might be syntactic in early layers, in deeper layers, they can become associated with words that reflect the semantic context in which "a" commonly appears, indicating that the model learns to use them to understand broader meaning.</explanation>
+  </problem>
+</problems>

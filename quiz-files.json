@@ -2,5 +2,13 @@
   {
     "name": "IML_1",
     "path": "/mp_quiz/IML_1.xml"
+  },
+  {
+    "name": "IML_2",
+    "path": "/mp_quiz/IML_2.xml"
+  },
+  {
+    "name": "IML_3",
+    "path": "/mp_quiz/IML_3.xml"
   }
 ]
